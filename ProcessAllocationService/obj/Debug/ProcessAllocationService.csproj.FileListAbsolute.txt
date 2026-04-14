@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.exe.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.exe
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProcessAllocationService\obj\Debug\ProcessAllocationService.csprojAssemblyReference.cache

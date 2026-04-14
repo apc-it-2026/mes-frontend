@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData">
+	<processing-directives>
+		<overwrite-existing-data>true</overwrite-existing-data>
+	</processing-directives>
+	<schedule>
+		<job>
+			<!--job名称-->
+			<name>JobName</name>
+			<!--job分组-->
+			<group>JobGroup</group>
+			<!--描述-->
+			<description>job描述</description>
+			<!--job方法所在命名空间.方法所在类-->
+			<job-type>JobSchedule.TestJob,TestJob</job-type>
+			<!--true：始终保留在Quartz的JobStore中；false:如果未关联trigger则移除-->
+			<durable>true</durable>
+			<recover>false</recover>
+		</job>
+		<!--复杂任务触发器-->
+		<trigger>
+			<cron>
+				<!--trigger名称-->
+				<name>TrigName</name>
+				<!--trigger分组-->
+				<group>TrigGroup</group>
+				<!--描述-->
+				<description>tirgger描述</description>
+				<!--绑定的job名称-->
+				<job-name>JobName</job-name>
+				<!--绑定的job组-->
+				<job-group>JobGroup</job-group>
+				<!--未按时触发时采取的策略-->
+				<misfire-instruction>SmartPolicy</misfire-instruction>
+				<!--每个整点触发-->
+				<!--<cron-expression>0 0 0/1 * * ? </cron-expression>-->
+				<!--1分钟执行一次-->
+				<cron-expression>0 0/1 * * * ? </cron-expression>
+				<!--秒 分 时 天 月 (周) 年-->
+			</cron>
+		</trigger>
+	</schedule>
+</job-scheduling-data>

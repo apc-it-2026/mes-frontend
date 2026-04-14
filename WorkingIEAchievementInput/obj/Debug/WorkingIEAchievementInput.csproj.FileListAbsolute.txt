@@ -1,0 +1,8 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.BadDeptForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.BadProFprm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.IERateForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingIEAchievementInput\obj\Debug\WorkingIEAchievementInput.csprojAssemblyReference.cache

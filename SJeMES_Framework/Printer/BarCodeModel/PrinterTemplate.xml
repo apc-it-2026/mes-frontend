@@ -1,0 +1,3176 @@
+<?xml version="1.0" ?>
+<Seagull_Template_Database Ver="1.2">
+   <Template Name="SAPScript-ITF" Visible="True" FileExportIntendedForFTP="False" EncoderType="19" Type="Tagged">
+      <DriverParams>system=sap/itf</DriverParams>
+      <Output FileSeparation="0" PrinterCode="0" DefaultExtension="ITF" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="0" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" Type="Constant" />
+         <Value Name="Footer" Type="Constant" />
+         <Value Name="StartLine" Type="Constant" />
+         <Value Name="EndLine" Type="Constant" />
+         <Value Name="StartFieldDelimiter" Type="Constant" />
+         <Value Name="EndFieldDelimiter" Type="Constant" />
+         <Value Name="StartPrintCode" Type="Constant" />
+         <Value Name="EndPrintCode" Type="Constant" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>' VBScript source code
+Option Explicit
+'Page Line Length Documentation
+' 26  Unlimited	
+' 69  132 (only 72 in editor)
+' 97  40-132,72
+'215  72-132
+
+Class PrintCodeOutputFile
+   Private Sub Class_Initialize()
+      Call WriteBOM()
+   End Sub
+
+   Public Function WriteString(s)
+      Dim numWritten
+      numWritten = PCM.WriteString(s)
+      WriteString = (numWritten = Len(s))
+   End Function
+
+   Public Function WriteByte(b)
+      Dim numWritten
+      Dim bStore(0)
+      
+      bStore(0) = CByte(b)
+      numWritten = PCM.WriteBytes(bStore, 1)
+      WriteByte = (numWritten = 1)
+   End Function
+   
+   Public Sub WriteBOM()      
+      'If output code page is UTF-8, then write BOM.
+      If (PCM.CodePage = 65001) Then
+         WriteByte(&amp;hEF)
+         WriteByte(&amp;hBB)
+         WriteByte(&amp;hBF)
+      End If
+   End Sub   
+End Class
+
+Class PrintCodeInputFile
+   Dim mTagNames()
+   Dim mNumTags
+   
+   Dim mTagLocations()
+   Dim mNumTagLocations
+   Dim mNumSections
+   
+   Private Sub Class_Initialize()
+      PCM.ManualByteOrderMarkMode = True
+      Call SkipBOM()
+      Call InitializeTagNames()
+      Call InitializeTagLocations()
+   End Sub
+
+   Public Function GetSize()
+      GetSize = PCM.InputFileSize
+   End Function
+
+   Public Function ReadByte()
+      Dim b(80)
+      Dim numRead
+      numRead = PCM.ReadBytes(b, 1)
+      If (numRead = 1) Then
+         ReadByte = b(0)
+      Else
+         ReadByte = 256
+      End If
+   End Function
+   
+   Public Function ReadChar()
+      ReadChar = PCM.ReadString(1)
+      If (IsNull(ReadChar) Or (Len(ReadChar) &lt;&gt; 1)) Then ReadChar = ""
+   End Function
+   
+   Public Function PeekChar()
+      Dim pos
+      pos = GetPos()
+      PeekChar = ReadChar()
+      SetPos(pos)
+   End Function
+   
+   Public Function GetPos()
+      GetPos = PCM.InputFilePosition
+   End Function
+   
+   Public Function SetPos(pos)
+      If (pos &gt; GetSize()) Then pos = GetSize()
+      PCM.InputFilePosition = pos
+      SetPos = PCM.InputFilePosition
+   End Function
+   
+   Public Function EOF()
+      EOF = PCM.FileAtEOF
+   End Function
+   
+   Public Function GetNumTags()
+      GetNumTags = mNumTags
+   End Function  
+
+   Public Function GetTagName(i)
+      If (i &lt; mNumTags) Then
+         GetTagName = mTagNames(i)
+      Else
+         GetTagName = ""
+      End If
+   End Function  
+
+   Public Function GetTagIndex(tagName)
+      Dim i
+      GetTagIndex = -1
+      For i = 0 To (mNumTags - 1)
+         If (UCase(tagName) = UCase(mTagNames(i))) Then
+            GetTagIndex = i
+            Exit For
+         End If
+      Next
+   End Function  
+
+   Private Sub InitializeTagNames()
+      Dim tagNames(), numTags, i, j
+
+      ' Get the number of Tags and TagNames
+      numTags = PCM.Tags.Count
+      Redim tagNames(numTags*2)
+      For i = 0 to (numTags - 1)
+         tagNames(i) = PCM.Tags(i).DelimitedName
+         tagNames(i+1) = PCM.Tags(i).Name
+      Next
+         
+      ' Set duplicate tag names to "".
+      For i = 0 To (numTags - 1)
+         If (Len(tagNames(i * 2)) &gt; 0) Then
+            For j = (i + 1) To (numTags - 1)
+               If (UCase(tagNames(i * 2)) = UCase(tagNames(j * 2))) Then
+                  tagNames(j * 2) = ""
+               End If
+            Next
+         End If
+      Next
+
+      ' Count the number of unique tag names.
+      mNumTags = 0
+      For i = 0 To (numTags - 1)
+         If (Len(tagNames(i * 2)) &gt; 0) Then mNumTags = mNumTags + 1
+      Next
+      
+      ' Copy unique tag names into appropriately sized array.
+      If (mNumTags &gt; 0) Then
+         Redim mTagNames(mNumTags - 1)
+         j = 0
+         For i = 0 To (numTags - 1)
+            If (Len(tagNames(i * 2)) &gt; 0) Then
+               mTagNames(j) = tagNames(i * 2)
+               j = j + 1
+            End If
+         Next
+      End If
+   End Sub
+   
+   Private Sub InitializeTagLocations()
+      Dim i, j
+      mNumTagLocations = PCM.Tags.Count * 2
+      If (mNumTagLocations = 0) Then
+         mNumSections = 1
+      Else
+         mNumSections = mNumTagLocations - 1
+         Redim mTagLocations(mNumTagLocations)
+         j = 0
+         For i = 0 To (PCM.Tags.Count - 1)
+            mTagLocations(j) = PCM.Tags(i).StartPosition
+            mTagLocations(j+1) = PCM.Tags(i).EndPosition
+            j = j + 2
+         Next       
+         If (mTagLocations(0) &gt; 0) Then mNumSections = mNumSections + 1
+         If (mTagLocations(mNumTagLocations - 1) &lt; GetSize()) Then mNumSections = mNumSections + 1
+      End If
+   End Sub
+   
+   
+   Private Sub SkipBOM()
+      If (GetSize() &gt; 3) Then
+         Dim b1, b2, b3
+         
+         b1 = ReadByte()
+         b2 = ReadByte()
+         b3 = ReadByte()
+         If ((b1 &lt;&gt; &amp;HEF) Or (b2 &lt;&gt; &amp;HBB) Or (b3 &lt;&gt; &amp;HBF)) Then SetPos(0)
+      End If
+   End Sub
+   
+   Public Function GetNumSections()
+      GetNumSections = mNumSections
+   End Function
+   
+   Public Sub GetSectionInfo(isPrintCode, endPos)
+      Dim pos, i
+      pos = GetPos()
+      
+      isPrintCode = True
+      endPos = GetSize()
+      For i = 0 To (mNumTagLocations - 1)
+         If (mTagLocations(i) &gt; pos) Then
+            isPrintCode = ((i And 1) = 0)
+            endPos = mTagLocations(i)
+            Exit For
+         End If
+      Next
+   End Sub
+   
+End Class
+
+Class ITFTextEncoder
+   Dim maxLineLength
+   Dim linePos
+   
+   Private Sub Class_Initialize()
+      maxLineLength = 72
+      linePos = 0
+   End Sub
+
+   Private Function ErrorString()
+      Dim errString
+      
+      errString = "The print code is incompatible with the currently selected Encoding ("
+      Select Case PCM.CodePage
+         Case 850:   errString = errString + "US, Western Europe (DOS, 850)"
+         Case 874:   errString = errString + "Thai (874)"
+         Case 932:   errString = errString + "Japanese (SHIFT-JIS, 932)"
+         Case 936:   errString = errString + "Chinese Simplified (GB-2312, 936)"
+         Case 949:   errString = errString + "Korean (Hangeul, 949)"
+         Case 950:   errString = errString + "Chinese Traditional (Taiwan, Big 5, 950)"
+         Case 1201:  errString = errString + "Unicode (UTF-16, Big Endian)"
+         Case 1250:  errString = errString + "Central Europe (1250)"
+         Case 1251:  errString = errString + "Cyrillic (1251)"
+         Case 1252:  errString = errString + "ANSI"
+         Case 1253:  errString = errString + "Greek (1253)"
+         Case 1254:  errString = errString + "Turkish (1254)"
+         Case 1255:  errString = errString + "Hebrew (1255)"
+         Case 1256:  errString = errString + "Arabic (1256)"
+         Case 1257:  errString = errString + "Baltic (1257)"
+         Case 1258:  errString = errString + "Viet Nam (1258)"
+         Case 1361:  errString = errString + "Korean (Johab, 1361)"
+         Case 20127: errString = errString + "US, Western Europe (7-Bit ASCII)"
+         Case 65001: errString = errString + "Unicode (UTF-8)"
+         Case Else
+            errString = errString + "unknown"
+      End Select
+      errString = errString + "). This error could indicate a binary encoded graphic in the output file and/or an invalid printer properties option."
+      ErrorString = errString
+   End Function
+      
+   Public Sub EncodePrinterCode(cR, endPos, sW)
+      ' "/ " Line Break followed by "Short" Line
+      ' "= " Concatenate following Long Line to previous line
+      '
+      ' "/=" Line Break followed by Long Line
+      ' "( " Concatenate following Raw Line to previous line
+      ' "/(" Line Break followed by Raw Line
+      ' "/*" Comment line
+      
+      ' lineType, All raw
+
+      If ((linePos = 0) And (cR.GetPos() &lt; endPos)) Then
+         sW.WriteString("/ ")
+         linePos = 2
+      End If
+
+      While (cR.GetPos() &lt; endPos)         
+         Dim ch
+         Dim ch2
+         ch = cR.ReadChar()
+         
+         If (ch = "") Then
+            Err.Clear
+            Err.Raise vbObjectError + 1, "ITFTextEncoder.EncodePrinterCode", ErrorString()
+         End If
+         
+         If (ch = Chr(13)) Then
+            ch2 = cR.PeekChar()
+            If (ch2 = Chr(10)) Then
+               ch2 = cR.ReadChar()
+               sW.WriteString(Chr(13) &amp; Chr(10) &amp; "/ ")
+               linePos = 2
+               ch = ""
+            End If
+         ElseIf (ch = ",") Then
+            ch2 = cR.PeekChar()
+            If (ch2 = ",") Then
+               ch2 = cR.ReadChar()
+               ch = "&lt;(&gt;,,&lt;)&gt;"
+            End If
+         End If         
+
+         If (Len(ch) &gt; 0)Then
+            Select Case ch
+               Case "&amp;"
+                  ch = "&lt;(&gt;&amp;&lt;)&gt;"
+               Case "&lt;"
+                  ch = "&lt;(&gt;&lt;&lt;)&gt;"
+               Case "&gt;"
+                  ch = "&lt;(&gt;&gt;&lt;)&gt;"
+               Case Else
+                  If (AscW(ch) &lt; 32) Then
+                     ch = "&lt;" &amp; AscW(ch) &amp; "&gt;"
+                  End If
+            End Select
+            
+            Dim chLen
+            chLen = Len(ch)
+            
+            If ((linePos + chLen) &gt; maxLineLength) Then
+               sW.WriteString(Chr(13) &amp; Chr(10) &amp; "= ")
+               linePos = 2
+            End If
+            sW.WriteString(ch)
+            linePos = linePos + chLen
+         End If
+      Wend
+   End Sub
+
+   Public Sub EncodeTagName(cR, endPos, sW)
+      Dim tagName
+      Dim tagNameLen
+      
+      tagName = ""
+      
+      While (cR.GetPos() &lt; endPos)
+         Dim ch
+         ch = cR.ReadChar()
+         
+         If (ch = "") Then
+            Err.Clear
+            Err.Raise vbObjectError + 1, "ITFTextEncoder.EncodePrinterCode", ErrorString()
+         End If
+         
+         If (ch = "&amp;") Then ch = "_"
+         
+         tagName = tagName &amp; ch
+      Wend
+
+      tagNameLen = Len(tagName)
+      If ((tagNameLen + 2 + linePos) &gt; maxLineLength) Then
+         sW.WriteString(Chr(13) &amp; Chr(10) &amp; "= ")
+         linePos = 2
+      End If
+      sW.WriteString("&amp;" &amp; tagName &amp; "&amp;")
+      linePos = linePos + 2 + tagNameLen
+   End Sub
+End Class
+
+Class BTSAPScriptITFEncoder
+   Private Sub Class_Initialize()      
+   End Sub
+
+   Sub Encode(formatName, printerName, fi, fo)
+      Dim Encoder
+      Dim numSections
+      Dim i
+
+      Set Encoder = new ITFTextEncoder
+
+      fo.WriteString("/* Format = '" &amp; formatName &amp; "', Printer = '" &amp; printerName &amp; "'" &amp; Chr(13) &amp; Chr(10))
+
+      numSections = fi.GetNumSections()
+      For i = 1 To numSections
+         Dim isPrintCode, endPos
+         Call fi.GetSectionInfo(isPrintCode, endPos)
+         If (isPrintCode) Then
+            Call Encoder.EncodePrinterCode(fi, endPos, fo)
+         Else
+            Call Encoder.EncodeTagName(fi, endPos, fo)
+         End If      
+      Next
+   End Sub
+End Class
+
+Sub Main()
+   Dim encoder
+   Dim inFile
+   Dim outFile
+   Set encoder = New BTSAPScriptITFEncoder
+   Set inFile = New PrintCodeInputFile
+   Set outFile = New PrintCodeOutputFile
+   
+   Call encoder.Encode(Format.BaseName, Format.Printer, inFile, outFile)
+End Sub
+
+Call Main()
+</VBScript>
+   </Template>
+   <Template Name="SAPScript-ITF (UTF-8)" Visible="True" FileExportIntendedForFTP="False" EncoderType="2" Type="Tagged">
+      <DriverParams>system=sap/itf</DriverParams>
+      <Output FileSeparation="0" PrinterCode="0" DefaultExtension="ITF" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="0" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" Type="Constant" />
+         <Value Name="Footer" Type="Constant" />
+         <Value Name="StartLine" Type="Constant" />
+         <Value Name="EndLine" Type="Constant" />
+         <Value Name="StartFieldDelimiter" Type="Constant" />
+         <Value Name="EndFieldDelimiter" Type="Constant" />
+         <Value Name="StartPrintCode" Type="Constant" />
+         <Value Name="EndPrintCode" Type="Constant" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>' VBScript source code
+Option Explicit
+'Page Line Length Documentation
+' 26  Unlimited	
+' 69  132 (only 72 in editor)
+' 97  40-132,72
+'215  72-132
+
+Class PrintCodeOutputFile
+   Private Sub Class_Initialize()
+      Call WriteBOM()
+   End Sub
+
+   Public Function WriteString(s)
+      Dim numWritten
+      numWritten = PCM.WriteString(s)
+      WriteString = (numWritten = Len(s))
+   End Function
+
+   Public Function WriteByte(b)
+      Dim numWritten
+      Dim bStore(0)
+      
+      bStore(0) = CByte(b)
+      numWritten = PCM.WriteBytes(bStore, 1)
+      WriteByte = (numWritten = 1)
+   End Function
+   
+   Public Sub WriteBOM()      
+      'If output code page is UTF-8, then write BOM.
+      If (PCM.CodePage = 65001) Then
+         WriteByte(&amp;hEF)
+         WriteByte(&amp;hBB)
+         WriteByte(&amp;hBF)
+      End If
+   End Sub   
+End Class
+
+Class PrintCodeInputFile
+   Dim mTagNames()
+   Dim mNumTags
+   
+   Dim mTagLocations()
+   Dim mNumTagLocations
+   Dim mNumSections
+   
+   Private Sub Class_Initialize()
+      PCM.ManualByteOrderMarkMode = True
+      Call SkipBOM()
+      Call InitializeTagNames()
+      Call InitializeTagLocations()
+   End Sub
+
+   Public Function GetSize()
+      GetSize = PCM.InputFileSize
+   End Function
+
+   Public Function ReadByte()
+      Dim b(80)
+      Dim numRead
+      numRead = PCM.ReadBytes(b, 1)
+      If (numRead = 1) Then
+         ReadByte = b(0)
+      Else
+         ReadByte = 256
+      End If
+   End Function
+   
+   Public Function ReadChar()
+      ReadChar = PCM.ReadString(1)
+      If (IsNull(ReadChar) Or (Len(ReadChar) &lt;&gt; 1)) Then ReadChar = ""
+   End Function
+   
+   Public Function PeekChar()
+      Dim pos
+      pos = GetPos()
+      PeekChar = ReadChar()
+      SetPos(pos)
+   End Function
+   
+   Public Function GetPos()
+      GetPos = PCM.InputFilePosition
+   End Function
+   
+   Public Function SetPos(pos)
+      If (pos &gt; GetSize()) Then pos = GetSize()
+      PCM.InputFilePosition = pos
+      SetPos = PCM.InputFilePosition
+   End Function
+   
+   Public Function EOF()
+      EOF = PCM.FileAtEOF
+   End Function
+   
+   Public Function GetNumTags()
+      GetNumTags = mNumTags
+   End Function  
+
+   Public Function GetTagName(i)
+      If (i &lt; mNumTags) Then
+         GetTagName = mTagNames(i)
+      Else
+         GetTagName = ""
+      End If
+   End Function  
+
+   Public Function GetTagIndex(tagName)
+      Dim i
+      GetTagIndex = -1
+      For i = 0 To (mNumTags - 1)
+         If (UCase(tagName) = UCase(mTagNames(i))) Then
+            GetTagIndex = i
+            Exit For
+         End If
+      Next
+   End Function  
+
+   Private Sub InitializeTagNames()
+      Dim tagNames(), numTags, i, j
+
+      ' Get the number of Tags and TagNames
+      numTags = PCM.Tags.Count
+      Redim tagNames(numTags*2)
+      For i = 0 to (numTags - 1)
+         tagNames(i) = PCM.Tags(i).DelimitedName
+         tagNames(i+1) = PCM.Tags(i).Name
+      Next
+         
+      ' Set duplicate tag names to "".
+      For i = 0 To (numTags - 1)
+         If (Len(tagNames(i * 2)) &gt; 0) Then
+            For j = (i + 1) To (numTags - 1)
+               If (UCase(tagNames(i * 2)) = UCase(tagNames(j * 2))) Then
+                  tagNames(j * 2) = ""
+               End If
+            Next
+         End If
+      Next
+
+      ' Count the number of unique tag names.
+      mNumTags = 0
+      For i = 0 To (numTags - 1)
+         If (Len(tagNames(i * 2)) &gt; 0) Then mNumTags = mNumTags + 1
+      Next
+      
+      ' Copy unique tag names into appropriately sized array.
+      If (mNumTags &gt; 0) Then
+         Redim mTagNames(mNumTags - 1)
+         j = 0
+         For i = 0 To (numTags - 1)
+            If (Len(tagNames(i * 2)) &gt; 0) Then
+               mTagNames(j) = tagNames(i * 2)
+               j = j + 1
+            End If
+         Next
+      End If
+   End Sub
+   
+   Private Sub InitializeTagLocations()
+      Dim i, j
+      mNumTagLocations = PCM.Tags.Count * 2
+      If (mNumTagLocations = 0) Then
+         mNumSections = 1
+      Else
+         mNumSections = mNumTagLocations - 1
+         Redim mTagLocations(mNumTagLocations)
+         j = 0
+         For i = 0 To (PCM.Tags.Count - 1)
+            mTagLocations(j) = PCM.Tags(i).StartPosition
+            mTagLocations(j+1) = PCM.Tags(i).EndPosition
+            j = j + 2
+         Next       
+         If (mTagLocations(0) &gt; 0) Then mNumSections = mNumSections + 1
+         If (mTagLocations(mNumTagLocations - 1) &lt; GetSize()) Then mNumSections = mNumSections + 1
+      End If
+   End Sub
+   
+   
+   Private Sub SkipBOM()
+      If (GetSize() &gt; 3) Then
+         Dim b1, b2, b3
+         
+         b1 = ReadByte()
+         b2 = ReadByte()
+         b3 = ReadByte()
+         If ((b1 &lt;&gt; &amp;HEF) Or (b2 &lt;&gt; &amp;HBB) Or (b3 &lt;&gt; &amp;HBF)) Then SetPos(0)
+      End If
+   End Sub
+   
+   Public Function GetNumSections()
+      GetNumSections = mNumSections
+   End Function
+   
+   Public Sub GetSectionInfo(isPrintCode, endPos)
+      Dim pos, i
+      pos = GetPos()
+      
+      isPrintCode = True
+      endPos = GetSize()
+      For i = 0 To (mNumTagLocations - 1)
+         If (mTagLocations(i) &gt; pos) Then
+            isPrintCode = ((i And 1) = 0)
+            endPos = mTagLocations(i)
+            Exit For
+         End If
+      Next
+   End Sub
+   
+End Class
+
+Class ITFTextEncoder
+   Dim maxLineLength
+   Dim linePos
+   
+   Private Sub Class_Initialize()
+      maxLineLength = 72
+      linePos = 0
+   End Sub
+   
+   Private Function ErrorString()
+      Dim errString
+      
+      errString = "The print code is incompatible with the currently selected Encoding ("
+      Select Case PCM.CodePage
+         Case 850:   errString = errString + "US, Western Europe (DOS, 850)"
+         Case 874:   errString = errString + "Thai (874)"
+         Case 932:   errString = errString + "Japanese (SHIFT-JIS, 932)"
+         Case 936:   errString = errString + "Chinese Simplified (GB-2312, 936)"
+         Case 949:   errString = errString + "Korean (Hangeul, 949)"
+         Case 950:   errString = errString + "Chinese Traditional (Taiwan, Big 5, 950)"
+         Case 1201:  errString = errString + "Unicode (UTF-16, Big Endian)"
+         Case 1250:  errString = errString + "Central Europe (1250)"
+         Case 1251:  errString = errString + "Cyrillic (1251)"
+         Case 1252:  errString = errString + "ANSI"
+         Case 1253:  errString = errString + "Greek (1253)"
+         Case 1254:  errString = errString + "Turkish (1254)"
+         Case 1255:  errString = errString + "Hebrew (1255)"
+         Case 1256:  errString = errString + "Arabic (1256)"
+         Case 1257:  errString = errString + "Baltic (1257)"
+         Case 1258:  errString = errString + "Viet Nam (1258)"
+         Case 1361:  errString = errString + "Korean (Johab, 1361)"
+         Case 20127: errString = errString + "US, Western Europe (7-Bit ASCII)"
+         Case 65001: errString = errString + "Unicode (UTF-8)"
+         Case Else
+            errString = errString + "unknown"
+      End Select
+      errString = errString + "). This error could indicate a binary encoded graphic in the output file and/or an invalid printer properties option."
+      ErrorString = errString
+   End Function
+      
+   Public Sub EncodePrinterCode(cR, endPos, sW)
+      ' "/ " Line Break followed by "Short" Line
+      ' "= " Concatenate following Long Line to previous line
+      '
+      ' "/=" Line Break followed by Long Line
+      ' "( " Concatenate following Raw Line to previous line
+      ' "/(" Line Break followed by Raw Line
+      ' "/*" Comment line
+      
+      ' lineType, All raw
+
+      If ((linePos = 0) And (cR.GetPos() &lt; endPos)) Then
+         sW.WriteString("/ ")
+         linePos = 2
+      End If
+
+      While (cR.GetPos() &lt; endPos)         
+         Dim ch
+         Dim ch2
+         ch = cR.ReadChar()
+         
+         If (ch = "") Then
+            Err.Clear
+            Err.Raise vbObjectError + 1, "ITFTextEncoder.EncodePrinterCode", ErrorString()
+         End If
+         
+         If (ch = Chr(13)) Then
+            ch2 = cR.PeekChar()
+            If (ch2 = Chr(10)) Then
+               ch2 = cR.ReadChar()
+               sW.WriteString(Chr(13) &amp; Chr(10) &amp; "/ ")
+               linePos = 2
+               ch = ""
+            End If
+         ElseIf (ch = ",") Then
+            ch2 = cR.PeekChar()
+            If (ch2 = ",") Then
+               ch2 = cR.ReadChar()
+               ch = "&lt;(&gt;,,&lt;)&gt;"
+            End If
+         End If         
+
+         If (Len(ch) &gt; 0)Then
+            Select Case ch
+               Case "&amp;"
+                  ch = "&lt;(&gt;&amp;&lt;)&gt;"
+               Case "&lt;"
+                  ch = "&lt;(&gt;&lt;&lt;)&gt;"
+               Case "&gt;"
+                  ch = "&lt;(&gt;&gt;&lt;)&gt;"
+               Case Else
+                  If (AscW(ch) &lt; 32) Then
+                     ch = "&lt;" &amp; AscW(ch) &amp; "&gt;"
+                  End If
+            End Select
+            
+            Dim chLen
+            chLen = Len(ch)
+            
+            If ((linePos + chLen) &gt; maxLineLength) Then
+               sW.WriteString(Chr(13) &amp; Chr(10) &amp; "= ")
+               linePos = 2
+            End If
+            sW.WriteString(ch)
+            linePos = linePos + chLen
+         End If
+      Wend
+   End Sub
+
+   Public Sub EncodeTagName(cR, endPos, sW)
+      Dim tagName
+      Dim tagNameLen
+      
+      tagName = ""
+      
+      While (cR.GetPos() &lt; endPos)
+         Dim ch
+         ch = cR.ReadChar()
+         
+         If (ch = "") Then
+            Err.Clear
+            Err.Raise vbObjectError + 1, "ITFTextEncoder.EncodePrinterCode", ErrorString()
+         End If
+         
+         If (ch = "&amp;") Then ch = "_"
+         
+         tagName = tagName &amp; ch
+      Wend
+
+      tagNameLen = Len(tagName)
+      If ((tagNameLen + 2 + linePos) &gt; maxLineLength) Then
+         sW.WriteString(Chr(13) &amp; Chr(10) &amp; "= ")
+         linePos = 2
+      End If
+      sW.WriteString("&amp;" &amp; tagName &amp; "&amp;")
+      linePos = linePos + 2 + tagNameLen
+   End Sub
+End Class
+
+Class BTSAPScriptITFEncoder
+   Private Sub Class_Initialize()      
+   End Sub
+
+   Sub Encode(formatName, printerName, fi, fo)
+      Dim Encoder
+      Dim numSections
+      Dim i
+
+      Set Encoder = new ITFTextEncoder
+
+      fo.WriteString("/* Format = '" &amp; formatName &amp; "', Printer = '" &amp; printerName &amp; "'" &amp; Chr(13) &amp; Chr(10))
+
+      numSections = fi.GetNumSections()
+      For i = 1 To numSections
+         Dim isPrintCode, endPos
+         Call fi.GetSectionInfo(isPrintCode, endPos)
+         If (isPrintCode) Then
+            Call Encoder.EncodePrinterCode(fi, endPos, fo)
+         Else
+            Call Encoder.EncodeTagName(fi, endPos, fo)
+         End If      
+      Next
+   End Sub
+End Class
+
+Sub Main()
+   Dim encoder
+   Dim inFile
+   Dim outFile
+   Set encoder = New BTSAPScriptITFEncoder
+   Set inFile = New PrintCodeInputFile
+   Set outFile = New PrintCodeOutputFile
+   
+   Call encoder.Encode(Format.BaseName, Format.Printer, inFile, outFile)
+End Sub
+
+Call Main()
+</VBScript>
+   </Template>
+   <Template Name="Datamax XML Enabled" EncoderType="2">
+      <EncoderTypeEditable />
+      <DriverParams>system=oracle/xml</DriverParams>
+      <Output FileSeparation="2" PrinterCode="0" />
+      <Performance AllowStaticGraphics="2" AllowStaticObjects="2" AllowVariableDataOptimization="2" />
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="DPL; " SupportedPrinterManufacturers="1" PrinterManufacturers="Datamax; " />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter">&amp;</Value>
+         <Value Name="EndFieldDelimiter">&amp;</Value>
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+   </Template>
+   <Template Name="Datamax Passport Form" EncoderType="18">
+      <DriverParams>system=datamax/passport</DriverParams>
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="DPL; " SupportedPrinterManufacturers="1" PrinterManufacturers="Datamax; " />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter">@V</Value>
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode"></Value>
+         <Value Name="EndPrintCode"></Value>
+      </TagValues>
+      <TranslationTable></TranslationTable>
+   </Template>
+   <Template Name="Intermec XML Ready" EncoderType="2">
+      <EncoderTypeEditable />
+      <DriverParams>system=Intermec XMLReady</DriverParams>
+      <Output FileSeparation="2" PrinterCode="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="2" />
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="IDP; " SupportedPrinterManufacturers="1" PrinterManufacturers="Intermec; " />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+        <![CDATA[Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - Command Names
+         '------------------------------------------------------------------------------
+         const cnsLoad   = "FILE& LOAD 1,"
+         const cnsQuote = """"
+         const cnsExt      = ".LBX"
+
+         '------------------------------------------------------------------------------
+         ' Declarations
+         '------------------------------------------------------------------------------
+         Dim byteBuf(), sLine, sName
+         Dim codeSize, numRead, numWritten
+
+         '------------------------------------------------------------------------------
+         ' Initialization
+         '------------------------------------------------------------------------------
+         codeSize = PCM.InputFileSize
+         numRead    = 0
+         numWritten = 0
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         if NeedLoad = True then
+	         ' .LBX is the default extension, used
+	         '  if no extension is given by job options.
+	         sName = UCase(Trim(PCT.FormatName))
+	         if InStr(sName,".") = 0 then
+		         sName = sName & cnsExt
+	         end if
+
+	         ' make the load command
+	         sLine = cnsLoad & cnsQuote & sName & cnsQuote
+	         sLine = sLine & "," & codeSize
+	         numWritten = PCM.WriteLine(sLine)
+         end if
+
+         ReDim byteBuf(codeSize)
+         numRead = PCM.ReadBytes(byteBuf, codeSize)
+         numWritten = PCM.WriteBytes(byteBuf, numRead)
+
+
+         '------------------------------------------------------------------------------
+         ' Function NeedLoad determines if we need a LOAD line at the
+         ' top of the file.
+         '------------------------------------------------------------------------------
+         function NeedLoad
+	         if PCT.ExportType = btPCTExportPort then
+		         NeedLoad = True
+	         elseif PCT.ExportType = btPCTExportSingle and PCT.ExportToFTP = False then
+		         NeedLoad = True
+	         else
+		         NeedLoad = False
+	         end if
+         end function
+         ]]>
+      </VBScript>
+   </Template>
+   <Template Name="Printronix XML Direct" Visible="True" EncoderType="3">
+      <DriverParams>system=oracle/xml</DriverParams>
+      <Output FileSeparation="2" PrinterCode="0" />
+      <Performance AllowStaticGraphics="2" AllowStaticObjects="2" AllowSerialization="0" AllowVariableDataOptimization="2" />
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="PGL; " SupportedPrinterManufacturers="1" PrinterManufacturers="Printronix" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+   </Template>
+   <Template Name="SATO XML Enabled" EncoderType="3">
+      <EncoderTypeEditable />
+      <DriverParams>system=oracle/xml</DriverParams>
+      <Output FileSeparation="2" PrinterCode="0" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="1" PrinterManufacturers="SATO; " />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+   </Template>
+   <Template Name="Zebra XML Enabled" EncoderType="2">
+      <EncoderTypeEditable />
+      <DriverParams>system=oracle/xml</DriverParams>
+      <Output FileSeparation="2" PrinterCode="0" />
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="ZPL; " SupportedPrinterManufacturers="1" PrinterManufacturers="Zebra; " />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+   </Template>
+   <Template Name="TEC KB75 (SRAM)" Visible="True" EncoderType="17" Type="Tagged">
+      <DriverParams />
+      <Output FileSeparation="0" PrinterCode="1" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="1" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+         Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - File Names
+         '------------------------------------------------------------------------------
+         const cnsProgram   = "PRINTOUT"
+         const cnsPrintcode = "PRINCODE"
+
+         '------------------------------------------------------------------------------
+         ' Constants - BASIC Commands, values
+         '------------------------------------------------------------------------------
+         const cnsDownload  = "DOWNLOAD"
+         const cnsToFlash   = "F,"
+         const cnsInput     = "INPUT """","
+         const cnsFout      = "FOUT "
+         const cnsOut       = "OUT "
+         const cnsOpen      = "OPEN "
+         const cnsClose     = "CLOSE "
+         const cnsSeek      = "SEEK "
+         const cnsForInput  = "FOR INPUT AS "
+         const cnsEndOfProg = "EOP"
+         const cnsFileOne   = "#1"
+         const cnsDollar    = "$"
+         const cnsSemicolon = ";"
+         const cnsComma     = ","
+         const cnsQuote     = """"
+         const cnA          = 65
+
+         '------------------------------------------------------------------------------
+         ' Constants - Asundry
+         '------------------------------------------------------------------------------
+         const cnPortNumber =  0 'Change this to 1 and hook up hyperterminal to debug
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         ' Configure output file names
+         dim sProgram, sPrintcode
+         sProgram   = PCT.FormatName
+         if Len(sProgram) < 1 then sProgram = cnsProgram
+         sProgram   = UCase(Left(sProgram,8))
+         sPrintcode = sProgram
+         sProgram   = sProgram & ".BAS"
+         sPrintcode = sPrintcode & ".DAT"
+
+         'Run Converter
+         dim Converter
+         set Converter = new KeyboardBasicConverter
+         Converter.Port          = cnPortNumber
+         Converter.ProgramFile   = sProgram
+         Converter.PrintcodeFile = sPrintcode
+         Converter.Convert
+
+         '------------------------------------------------------------------------------
+         ' Class KeyboardBasicConverter converts print code to a format accepted by the
+         ' TSC KU-007 Keyboard.
+         '------------------------------------------------------------------------------
+         class KeyboardBasicConverter
+            '--------------------------------------
+            ' Members
+            '--------------------------------------
+            private mPort
+            private mUseFlash
+            private mProgramFile
+            private mPrintcodeFile
+            
+            '--------------------------------------
+            ' Constructor
+            '--------------------------------------
+            private sub Class_Initialize()
+               mProgramFile   = cnsProgram & ".BAS"
+               mPrintcodeFile = cnsPrintcode & ".DAT"
+               mPort          = cnPortNumber
+               mUseFlash      = False
+            end sub
+
+            '--------------------------------------
+            ' Port Property
+            '--------------------------------------
+            public property get Port()
+               Port = mPort
+            end property
+            
+            public property let Port(p)
+               mPort = p
+            end property
+               
+            '--------------------------------------
+            ' UseFlash Property
+            '--------------------------------------
+            public property get UseFlash()
+               UseFlash = mUseFlash
+            end property
+            
+            public property let UseFlash(b)
+               mUseFlash = b
+            end property
+               
+            '--------------------------------------
+            ' ProgramFile Property
+            '--------------------------------------
+            public property get ProgramFile()
+               ProgramFile = mProgramFile
+            end property
+            
+            public property let ProgramFile(f)
+               mProgramFile = f
+            end property
+               
+            '--------------------------------------
+            ' PrintcodeFile Property
+            '--------------------------------------
+            public property get PrintcodeFile()
+               PrintcodeFile = mPrintcodeFile
+            end property
+            
+            public property let PrintcodeFile(f)
+               mPrintcodeFile = f
+            end property
+
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public sub Convert
+               call ConvertFiles(mProgramFile, mPrintcodeFile)
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public Sub ConvertFiles(basicFileName, printerCodeFileName)
+               mProgramFile   = basicFileName
+               mPrintcodeFile = printerCodeFileName
+                
+               '-----------------------------------
+               ' Turn on Manual BOM transfer
+               '-----------------------------------
+               PCM.ManualByteOrderMarkMode = True
+               
+               '-----------------------------------
+               ' Write BASIC code Header
+               '-----------------------------------
+               dim sLine, res
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mProgramFile & cnsQuote
+               res   = PCM.WriteLine(sLine)
+               
+               '-----------------------------------
+               ' Get the tags and write prompts for 
+               ' them to the BASIC output file
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "DO"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               MakeVBPrompts
+
+               '-----------------------------------
+               ' Write BASIC code to open Printer
+               ' code file
+               '-----------------------------------
+               sLine = cnsOpen & cnsQuote & mPrintcodeFile & cnsQuote 
+               sLine = sLine & " " & cnsForInput & cnsFileOne
+               res   = PCM.WriteLine(sLine)
+
+               '-----------------------------------
+               ' Get the prompt locations and 
+               ' create BASIC to write the pieces 
+               ' of the printer code between the 
+               ' prompts to the printer
+               '-----------------------------------
+               dim fileSize
+               fileSize = PCM.InputFileSize
+
+               if PCM.Tags.Count > 0 then
+                  call MakeVBOuts(fileSize)
+               else
+                  call WriteFileCmd(mPort, 1, fileSize+2)
+               end if
+
+               '--------------------------------------
+               ' Write BASIC close  and end of program
+               ' file statements
+               '--------------------------------------
+               res   = PCM.WriteLine(cnsClose & cnsFileOne)
+
+               '--------------------------------------
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "LOOP"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               res   = PCM.WriteLine(cnsEndOfProg)
+
+               '--------------------------------------
+               ' Write the printer code into the
+               ' BASIC File
+               '--------------------------------------
+               call WritePrintcode(fileSize)
+            end sub 'ConvertFiles
+
+            '---------------------------------------------------------------------------
+            ' WritePrintcode copies the print code to the output file
+            '---------------------------------------------------------------------------
+            public sub WritePrintcode(codeSize)
+               dim sLine, fileBuf(), fileBufSize
+               dim numTags, actCodeSize, numRead, res
+
+               numTags     = PCM.Tags.Count
+               fileBufSize = 0
+               
+               '--------------------------------------
+               ' Determine the actual size of the
+               ' printer code file
+               '--------------------------------------
+               if numTags > 0 then
+                  actCodeSize = CalcCodeSize(codeSize)
+               else
+                  actCodeSize = codeSize
+               end If
+
+               '--------------------------------------
+               ' Write the DOWNLOAD Statement
+               '--------------------------------------
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mPrintcodeFile 
+               sLine = sLine & cnsQuote & cnsComma & actCodeSize + 2 & cnsComma
+               res   = PCM.WriteLine(sLine)
+               
+               '--------------------------------------
+               ' Write the Printer Code
+               '--------------------------------------
+               dim idx, numBytes, tag
+               
+               if numTags > 0 then
+                  for each tag in PCM.Tags
+                     if idx = 0 then
+                        numBytes = tag.StartPosition
+                     else
+                        numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                     end if
+                     Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                     numRead = PCM.ReadBytes(fileBuf, numBytes)
+                     numRead = PCM.WriteBytes(fileBuf, numRead)
+                     PCM.InputFilePosition = tag.EndPosition
+                     idx = idx + 1
+                  next
+                  numBytes = codeSize - PCM.Tags(numTags-1).EndPosition
+                  Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                  numRead = PCM.ReadBytes(fileBuf, numBytes)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               else
+                  Call RightSizeBuf(fileBuf, fileBufSize, codeSize)
+                  numRead = PCM.ReadBytes(fileBuf, codeSize)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               end if
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' WriteOutCmd creates a BASIC output statement, "OUT" to port number with
+            ' sText
+            '---------------------------------------------------------------------------
+            public sub WriteOutCmd(port, sText)
+               dim sCmd, res
+               sCmd = cnsOut & port & cnsSemicolon & sText & cnsSemicolon
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' WriteFileCmd creates a BASIC File Ouput statement, "FOUT" to port number,
+            ' from fileNo with byteCount number of bytes
+            '---------------------------------------------------------------------------
+            public sub WriteFileCmd(port, fileNo, byteCount)
+               dim sCmd, res
+               sCmd = cnsFout & port & cnsComma & fileNo & cnsComma & byteCount
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' MakeVBPrompts writes all the necessary PROMPT INPUT statments to the 
+            ' output file.  The "prompts" array is ordered in the following fashion:
+            ' even numbered array elements are prompts with delimiters; odd numbered
+            ' array elements are prompts without delimiters.  So we want the odd ones.
+            '---------------------------------------------------------------------------
+            private sub MakeVBPrompts
+               dim tag, idx, sLine, res
+               idx = 0
+               for each tag in PCM.Tags
+                  if idx = FirstPromptIndex(tag.Name) then
+                     sLine = cnsPrint & cnsQuote & tag.Name & cnsQuote
+                     res   = PCM.WriteLine(sLine)
+                     sLine = cnsInput & Chr(cnA+idx) & cnsDollar
+                     res   = PCM.WriteLine(sLine)
+                  end if
+                  idx = idx + 1
+               next
+            end sub 'MakeVBPrompts
+
+            '---------------------------------------------------------------------------
+            ' MakeVBOuts writes all the necessary FOUT and OUT statments to the output
+            ' file.  These are used in the keyboard BASIC program to write printercode,
+            ' interspersed with prompted values, to the printer.  The locations array is
+            ' ordered in the following fashion: even elements are offsets to the start
+            ' of a prompt; odd elements are offsets to the end of the prompt.  Therefore
+            ' the output lines need to look like this:
+            ' FOUT port,fileNo,(even offset) (offset = number of bytes in this case)
+            ' OUT  port,promptValue (= $A, $B, $C, etc.)
+            ' SEEK fileNo,(odd offset)
+            ' NOTE: Offsets are incremented by 2 because the line prefacing the
+            ' printer code ends in a CR LF pair, giving us 2 more bytes.
+            '---------------------------------------------------------------------------
+            private sub MakeVBOuts(fileSize)
+               dim tag, idx, pidx, numBytes, numTags
+               numTags = PCM.Tags.Count
+               idx     = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition + 2
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  call WriteFileCmd(mPort, 1, numBytes)
+                  pidx = FirstPromptIndex(tag.Name)
+                  call WriteOutCmd(mPort, Chr(cnA+pidx) & cnsDollar)
+                  idx = idx + 1
+               next
+               numBytes = fileSize - PCM.Tags(numTags-1).EndPosition
+               call WriteFileCmd(mPort, 1, numBytes)
+            end sub 'MakeVBOuts
+
+            '---------------------------------------------------------------------------
+            ' CalcCodeSize Calculates the size of the Printer Code with the prompt
+            ' strings removed
+            '---------------------------------------------------------------------------
+            private function CalcCodeSize(codeSize)
+               dim idx, actCodeSize, numBytes, tag      
+               actCodeSize = 0
+               idx         = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  actCodeSize = actCodeSize + numBytes
+                  idx = idx + 1
+               next
+               numBytes = codeSize - PCM.Tags(PCM.Tags.Count-1).EndPosition
+               CalcCodeSize = actCodeSize + numBytes
+            end function
+            
+            '---------------------------------------------------------------------------
+            ' FirstPromptIndex finds the first index in the prompt array of a 
+            ' particular prompt
+            '---------------------------------------------------------------------------
+            private function FirstPromptIndex(sPrompt)
+               dim idx
+               for idx = 0 to PCM.Tags.Count - 1
+                  if StrComp(PCM.Tags(idx).Name, sPrompt) = 0 then
+                     FirstPromptIndex = idx
+                     exit function
+                  end if
+               next
+               FirstPromptIndex = -1 
+            end function
+               
+            '---------------------------------------------------------------------------
+            ' RightSizeBuf enlarges a buffer if necessary, setting the 'oldSize' to the
+            ' 'newSize'
+            '---------------------------------------------------------------------------
+            private sub RightSizeBuf(buff, oldSize, newSize)
+               if newSize > oldSize then
+                  oldSize = newSize
+                  ReDim buff(newSize)
+               end if
+            end sub
+            
+         end class 'KeyboardBasicConverterr      
+      ]]>      
+      </VBScript>
+   </Template>
+   <Template Name="TEC KB75 (FLASH)" Visible="True" EncoderType="17" Type="Tagged">
+      <DriverParams />
+      <Output FileSeparation="0" PrinterCode="1" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="1" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+         Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - File Names
+         '------------------------------------------------------------------------------
+         const cnsProgram   = "PRINTOUT"
+         const cnsPrintcode = "PRINCODE"
+
+         '------------------------------------------------------------------------------
+         ' Constants - BASIC Commands, values
+         '------------------------------------------------------------------------------
+         const cnsDownload  = "DOWNLOAD"
+         const cnsToFlash   = "F,"
+         const cnsInput     = "INPUT """","
+         const cnsPrint     = "PRINT "
+         const cnsFout      = "FOUT "
+         const cnsOut       = "OUT "
+         const cnsOpen      = "OPEN "
+         const cnsClose     = "CLOSE "
+         const cnsSeek      = "SEEK "
+         const cnsForInput  = "FOR INPUT AS "
+         const cnsEndOfProg = "EOP"
+         const cnsFileOne   = "#1"
+         const cnsDollar    = "$"
+         const cnsSemicolon = ";"
+         const cnsComma     = ","
+         const cnsQuote     = """"
+         const cnA          = 65
+
+         '------------------------------------------------------------------------------
+         ' Constants - Asundry
+         '------------------------------------------------------------------------------
+         const cnPortNumber =  0 'Change this to 1 and hook up hyperterminal to debug
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         ' Configure output file names
+         dim sProgram, sPrintcode
+         sProgram   = PCT.FormatName
+         if Len(sProgram) < 1 then sProgram = cnsProgram
+         sProgram   = UCase(Left(sProgram,8))
+         sPrintcode = sProgram
+         sProgram   = sProgram & ".BAS"
+         sPrintcode = sPrintcode & ".DAT"
+
+         'Run Converter
+         dim Converter
+         set Converter = new KeyboardBasicConverter
+         Converter.Port          = cnPortNumber
+         Converter.ProgramFile   = sProgram
+         Converter.PrintcodeFile = sPrintcode
+         Converter.UseFlash      = True
+         Converter.Convert
+
+
+         '------------------------------------------------------------------------------
+         ' Class KeyboardBasicConverter converts print code to a format accepted by the
+         ' TSC KU-007 Keyboard.
+         '------------------------------------------------------------------------------
+         class KeyboardBasicConverter
+            '--------------------------------------
+            ' Members
+            '--------------------------------------
+            private mPort
+            private mUseFlash
+            private mProgramFile
+            private mPrintcodeFile
+            
+            '--------------------------------------
+            ' Constructor
+            '--------------------------------------
+            private sub Class_Initialize()
+               mProgramFile   = cnsProgram & ".BAS"
+               mPrintcodeFile = cnsPrintcode & ".DAT"
+               mPort          = cnPortNumber
+               mUseFlash      = False
+            end sub
+
+            '--------------------------------------
+            ' Port Property
+            '--------------------------------------
+            public property get Port()
+               Port = mPort
+            end property
+            
+            public property let Port(p)
+               mPort = p
+            end property
+               
+            '--------------------------------------
+            ' UseFlash Property
+            '--------------------------------------
+            public property get UseFlash()
+               UseFlash = mUseFlash
+            end property
+            
+            public property let UseFlash(b)
+               mUseFlash = b
+            end property
+               
+            '--------------------------------------
+            ' ProgramFile Property
+            '--------------------------------------
+            public property get ProgramFile()
+               ProgramFile = mProgramFile
+            end property
+            
+            public property let ProgramFile(f)
+               mProgramFile = f
+            end property
+               
+            '--------------------------------------
+            ' PrintcodeFile Property
+            '--------------------------------------
+            public property get PrintcodeFile()
+               PrintcodeFile = mPrintcodeFile
+            end property
+            
+            public property let PrintcodeFile(f)
+               mPrintcodeFile = f
+            end property
+
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public sub Convert
+               call ConvertFiles(mProgramFile, mPrintcodeFile)
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public Sub ConvertFiles(basicFileName, printerCodeFileName)
+               mProgramFile   = basicFileName
+               mPrintcodeFile = printerCodeFileName
+                
+               '-----------------------------------
+               ' Turn on Manual BOM transfer
+               '-----------------------------------
+               PCM.ManualByteOrderMarkMode = True
+               
+               '-----------------------------------
+               ' Write BASIC code Header
+               '-----------------------------------
+               dim sLine, res
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mProgramFile & cnsQuote
+               res   = PCM.WriteLine(sLine)
+               
+               '-----------------------------------
+               ' Get the tags and write prompts for 
+               ' them to the BASIC output file
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "DO"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               MakeVBPrompts
+
+               '-----------------------------------
+               ' Write BASIC code to open Printer
+               ' code file
+               '-----------------------------------
+               sLine = cnsOpen & cnsQuote & mPrintcodeFile & cnsQuote 
+               sLine = sLine & " " & cnsForInput & cnsFileOne
+               res   = PCM.WriteLine(sLine)
+
+               '-----------------------------------
+               ' Get the prompt locations and 
+               ' create BASIC to write the pieces 
+               ' of the printer code between the 
+               ' prompts to the printer
+               '-----------------------------------
+               dim fileSize
+               fileSize = PCM.InputFileSize
+
+               if PCM.Tags.Count > 0 then
+                  call MakeVBOuts(fileSize)
+               else
+                  call WriteFileCmd(mPort, 1, fileSize+2)
+               end if
+
+               '--------------------------------------
+               ' Write BASIC close  and end of program
+               ' file statements
+               '--------------------------------------
+               res   = PCM.WriteLine(cnsClose & cnsFileOne)
+
+               '--------------------------------------
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "LOOP"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               res   = PCM.WriteLine(cnsEndOfProg)
+
+               '--------------------------------------
+               ' Write the printer code into the
+               ' BASIC File
+               '--------------------------------------
+               call WritePrintcode(fileSize)
+            end sub 'ConvertFiles
+
+            '---------------------------------------------------------------------------
+            ' WritePrintcode copies the print code to the output file
+            '---------------------------------------------------------------------------
+            public sub WritePrintcode(codeSize)
+               dim sLine, fileBuf(), fileBufSize
+               dim numTags, actCodeSize, numRead, res
+
+               numTags     = PCM.Tags.Count
+               fileBufSize = 0
+               
+               '--------------------------------------
+               ' Determine the actual size of the
+               ' printer code file
+               '--------------------------------------
+               if numTags > 0 then
+                  actCodeSize = CalcCodeSize(codeSize)
+               else
+                  actCodeSize = codeSize
+               end If
+
+               '--------------------------------------
+               ' Write the DOWNLOAD Statement
+               '--------------------------------------
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mPrintcodeFile 
+               sLine = sLine & cnsQuote & cnsComma & actCodeSize + 2 & cnsComma
+               res   = PCM.WriteLine(sLine)
+               
+               '--------------------------------------
+               ' Write the Printer Code
+               '--------------------------------------
+               dim idx, numBytes, tag
+               
+               if numTags > 0 then
+                  for each tag in PCM.Tags
+                     if idx = 0 then
+                        numBytes = tag.StartPosition
+                     else
+                        numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                     end if
+                     Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                     numRead = PCM.ReadBytes(fileBuf, numBytes)
+                     numRead = PCM.WriteBytes(fileBuf, numRead)
+                     PCM.InputFilePosition = tag.EndPosition
+                     idx = idx + 1
+                  next
+                  numBytes = codeSize - PCM.Tags(numTags-1).EndPosition
+                  Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                  numRead = PCM.ReadBytes(fileBuf, numBytes)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               else
+                  Call RightSizeBuf(fileBuf, fileBufSize, codeSize)
+                  numRead = PCM.ReadBytes(fileBuf, codeSize)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               end if
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' WriteOutCmd creates a BASIC output statement, "OUT" to port number with
+            ' sText
+            '---------------------------------------------------------------------------
+            public sub WriteOutCmd(port, sText)
+               dim sCmd, res
+               sCmd = cnsOut & port & cnsSemicolon & sText & cnsSemicolon
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' WriteFileCmd creates a BASIC File Ouput statement, "FOUT" to port number,
+            ' from fileNo with byteCount number of bytes
+            '---------------------------------------------------------------------------
+            public sub WriteFileCmd(port, fileNo, byteCount)
+               dim sCmd, res
+               sCmd = cnsFout & port & cnsComma & fileNo & cnsComma & byteCount
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' MakeVBPrompts writes all the necessary PROMPT INPUT statments to the 
+            ' output file.  The "prompts" array is ordered in the following fashion:
+            ' even numbered array elements are prompts with delimiters; odd numbered
+            ' array elements are prompts without delimiters.  So we want the odd ones.
+            '---------------------------------------------------------------------------
+            private sub MakeVBPrompts
+               dim tag, idx, sLine, res
+               idx = 0
+               for each tag in PCM.Tags
+                  if idx = FirstPromptIndex(tag.Name) then
+                     sLine = cnsPrint & cnsQuote & tag.Name & cnsQuote
+                     res   = PCM.WriteLine(sLine)
+                     sLine = cnsInput & Chr(cnA+idx) & cnsDollar
+                     res   = PCM.WriteLine(sLine)
+                  end if
+                  idx = idx + 1
+               next
+            end sub 'MakeVBPrompts
+
+            '---------------------------------------------------------------------------
+            ' MakeVBOuts writes all the necessary FOUT and OUT statments to the output
+            ' file.  These are used in the keyboard BASIC program to write printercode,
+            ' interspersed with prompted values, to the printer.  The locations array is
+            ' ordered in the following fashion: even elements are offsets to the start
+            ' of a prompt; odd elements are offsets to the end of the prompt.  Therefore
+            ' the output lines need to look like this:
+            ' FOUT port,fileNo,(even offset) (offset = number of bytes in this case)
+            ' OUT  port,promptValue (= $A, $B, $C, etc.)
+            ' SEEK fileNo,(odd offset)
+            ' NOTE: Offsets are incremented by 2 because the line prefacing the
+            ' printer code ends in a CR LF pair, giving us 2 more bytes.
+            '---------------------------------------------------------------------------
+            private sub MakeVBOuts(fileSize)
+               dim tag, idx, pidx, numBytes, numTags
+               numTags = PCM.Tags.Count
+               idx     = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition + 2
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  call WriteFileCmd(mPort, 1, numBytes)
+                  pidx = FirstPromptIndex(tag.Name)
+                  call WriteOutCmd(mPort, Chr(cnA+pidx) & cnsDollar)
+                  idx = idx + 1
+               next
+               numBytes = fileSize - PCM.Tags(numTags-1).EndPosition
+               call WriteFileCmd(mPort, 1, numBytes)
+            end sub 'MakeVBOuts
+
+            '---------------------------------------------------------------------------
+            ' CalcCodeSize Calculates the size of the Printer Code with the prompt
+            ' strings removed
+            '---------------------------------------------------------------------------
+            private function CalcCodeSize(codeSize)
+               dim idx, actCodeSize, numBytes, tag      
+               actCodeSize = 0
+               idx         = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  actCodeSize = actCodeSize + numBytes
+                  idx = idx + 1
+               next
+               numBytes = codeSize - PCM.Tags(PCM.Tags.Count-1).EndPosition
+               CalcCodeSize = actCodeSize + numBytes
+            end function
+            
+            '---------------------------------------------------------------------------
+            ' FirstPromptIndex finds the first index in the prompt array of a 
+            ' particular prompt
+            '---------------------------------------------------------------------------
+            private function FirstPromptIndex(sPrompt)
+               dim idx
+               for idx = 0 to PCM.Tags.Count - 1
+                  if StrComp(PCM.Tags(idx).Name, sPrompt) = 0 then
+                     FirstPromptIndex = idx
+                     exit function
+                  end if
+               next
+               FirstPromptIndex = -1 
+            end function
+               
+            '---------------------------------------------------------------------------
+            ' RightSizeBuf enlarges a buffer if necessary, setting the 'oldSize' to the
+            ' 'newSize'
+            '---------------------------------------------------------------------------
+            private sub RightSizeBuf(buff, oldSize, newSize)
+               if newSize > oldSize then
+                  oldSize = newSize
+                  ReDim buff(newSize)
+               end if
+            end sub
+            
+         end class 'KeyboardBasicConverterr      
+      ]]>      
+      </VBScript>
+   </Template>
+   <Template Name="TSC KU-007" Visible="True" EncoderType="17" Type="Tagged">
+      <DriverParams />
+      <Output FileSeparation="0" PrinterCode="1" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="1" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+         Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - File Names
+         '------------------------------------------------------------------------------
+         const cnsProgram   = "PRINTOUT"
+         const cnsPrintcode = "PRINCODE"
+
+         '------------------------------------------------------------------------------
+         ' Constants - BASIC Commands, values
+         '------------------------------------------------------------------------------
+         const cnsDownload  = "DOWNLOAD"
+         const cnsToFlash   = "F,"
+         const cnsInput     = "INPUT """","
+         const cnsPrint     = "PRINT "
+         const cnsFout      = "FOUT "
+         const cnsOut       = "OUT "
+         const cnsOpen      = "OPEN "
+         const cnsClose     = "CLOSE "
+         const cnsSeek      = "SEEK "
+         const cnsForInput  = "FOR INPUT AS "
+         const cnsEndOfProg = "EOP"
+         const cnsFileOne   = "#1"
+         const cnsDollar    = "$"
+         const cnsSemicolon = ";"
+         const cnsComma     = ","
+         const cnsQuote     = """"
+         const cnA          = 65
+
+         '------------------------------------------------------------------------------
+         ' Constants - Asundry
+         '------------------------------------------------------------------------------
+         const cnPortNumber =  0 'Change this to 1 and hook up hyperterminal to debug
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         ' Configure output file names
+         dim sProgram, sPrintcode
+         sProgram   = PCT.FormatName
+         if Len(sProgram) < 1 then sProgram = cnsProgram
+         sProgram   = UCase(Left(sProgram,8))
+         sPrintcode = sProgram
+         sProgram   = sProgram & ".BAS"
+         sPrintcode = sPrintcode & ".DAT"
+
+         'Run Converter
+         dim Converter
+         set Converter = new KeyboardBasicConverter
+         Converter.Port          = cnPortNumber
+         Converter.ProgramFile   = sProgram
+         Converter.PrintcodeFile = sPrintcode
+         Converter.Convert
+
+
+         '------------------------------------------------------------------------------
+         ' Class KeyboardBasicConverter converts print code to a format accepted by the
+         ' TSC KU-007 Keyboard.
+         '------------------------------------------------------------------------------
+         class KeyboardBasicConverter
+            '--------------------------------------
+            ' Members
+            '--------------------------------------
+            private mPort
+            private mUseFlash
+            private mProgramFile
+            private mPrintcodeFile
+            
+            '--------------------------------------
+            ' Constructor
+            '--------------------------------------
+            private sub Class_Initialize()
+               mProgramFile   = cnsProgram & ".BAS"
+               mPrintcodeFile = cnsPrintcode & ".DAT"
+               mPort          = cnPortNumber
+               mUseFlash      = False
+            end sub
+
+            '--------------------------------------
+            ' Port Property
+            '--------------------------------------
+            public property get Port()
+               Port = mPort
+            end property
+            
+            public property let Port(p)
+               mPort = p
+            end property
+               
+            '--------------------------------------
+            ' UseFlash Property
+            '--------------------------------------
+            public property get UseFlash()
+               UseFlash = mUseFlash
+            end property
+            
+            public property let UseFlash(b)
+               mUseFlash = b
+            end property
+               
+            '--------------------------------------
+            ' ProgramFile Property
+            '--------------------------------------
+            public property get ProgramFile()
+               ProgramFile = mProgramFile
+            end property
+            
+            public property let ProgramFile(f)
+               mProgramFile = f
+            end property
+               
+            '--------------------------------------
+            ' PrintcodeFile Property
+            '--------------------------------------
+            public property get PrintcodeFile()
+               PrintcodeFile = mPrintcodeFile
+            end property
+            
+            public property let PrintcodeFile(f)
+               mPrintcodeFile = f
+            end property
+
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public sub Convert
+               call ConvertFiles(mProgramFile, mPrintcodeFile)
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public Sub ConvertFiles(basicFileName, printerCodeFileName)
+               mProgramFile   = basicFileName
+               mPrintcodeFile = printerCodeFileName
+                
+               '-----------------------------------
+               ' Turn on Manual BOM transfer
+               '-----------------------------------
+               PCM.ManualByteOrderMarkMode = True
+               
+               '-----------------------------------
+               ' Write BASIC code Header
+               '-----------------------------------
+               dim sLine, res
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mProgramFile & cnsQuote
+               res   = PCM.WriteLine(sLine)
+               
+               '-----------------------------------
+               ' Get the tags and write prompts for 
+               ' them to the BASIC output file
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "DO"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               MakeVBPrompts
+
+               '-----------------------------------
+               ' Write BASIC code to open Printer
+               ' code file
+               '-----------------------------------
+               sLine = cnsOpen & cnsQuote & mPrintcodeFile & cnsQuote 
+               sLine = sLine & " " & cnsForInput & cnsFileOne
+               res   = PCM.WriteLine(sLine)
+
+               '-----------------------------------
+               ' Get the prompt locations and 
+               ' create BASIC to write the pieces 
+               ' of the printer code between the 
+               ' prompts to the printer
+               '-----------------------------------
+               dim fileSize
+               fileSize = PCM.InputFileSize
+
+               if PCM.Tags.Count > 0 then
+                  call MakeVBOuts(fileSize)
+               else
+                  call WriteFileCmd(mPort, 1, fileSize+2)
+               end if
+
+               '--------------------------------------
+               ' Write BASIC close  and end of program
+               ' file statements
+               '--------------------------------------
+               res   = PCM.WriteLine(cnsClose & cnsFileOne)
+
+               '--------------------------------------
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "LOOP"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               res   = PCM.WriteLine(cnsEndOfProg)
+
+               '--------------------------------------
+               ' Write the printer code into the
+               ' BASIC File
+               '--------------------------------------
+               call WritePrintcode(fileSize)
+            end sub 'ConvertFiles
+
+            '---------------------------------------------------------------------------
+            ' WritePrintcode copies the print code to the output file
+            '---------------------------------------------------------------------------
+            public sub WritePrintcode(codeSize)
+               dim sLine, fileBuf(), fileBufSize
+               dim numTags, actCodeSize, numRead, res
+
+               numTags     = PCM.Tags.Count
+               fileBufSize = 0
+               
+               '--------------------------------------
+               ' Determine the actual size of the
+               ' printer code file
+               '--------------------------------------
+               if numTags > 0 then
+                  actCodeSize = CalcCodeSize(codeSize)
+               else
+                  actCodeSize = codeSize
+               end If
+
+               '--------------------------------------
+               ' Write the DOWNLOAD Statement
+               '--------------------------------------
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mPrintcodeFile 
+               sLine = sLine & cnsQuote & cnsComma & actCodeSize + 2 & cnsComma
+               res   = PCM.WriteLine(sLine)
+               
+               '--------------------------------------
+               ' Write the Printer Code
+               '--------------------------------------
+               dim idx, numBytes, tag
+               
+               if numTags > 0 then
+                  for each tag in PCM.Tags
+                     if idx = 0 then
+                        numBytes = tag.StartPosition
+                     else
+                        numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                     end if
+                     Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                     numRead = PCM.ReadBytes(fileBuf, numBytes)
+                     numRead = PCM.WriteBytes(fileBuf, numRead)
+                     PCM.InputFilePosition = tag.EndPosition
+                     idx = idx + 1
+                  next
+                  numBytes = codeSize - PCM.Tags(numTags-1).EndPosition
+                  Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                  numRead = PCM.ReadBytes(fileBuf, numBytes)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               else
+                  Call RightSizeBuf(fileBuf, fileBufSize, codeSize)
+                  numRead = PCM.ReadBytes(fileBuf, codeSize)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               end if
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' WriteOutCmd creates a BASIC output statement, "OUT" to port number with
+            ' sText
+            '---------------------------------------------------------------------------
+            public sub WriteOutCmd(port, sText)
+               dim sCmd, res
+               sCmd = cnsOut & port & cnsSemicolon & sText & cnsSemicolon
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' WriteFileCmd creates a BASIC File Ouput statement, "FOUT" to port number,
+            ' from fileNo with byteCount number of bytes
+            '---------------------------------------------------------------------------
+            public sub WriteFileCmd(port, fileNo, byteCount)
+               dim sCmd, res
+               sCmd = cnsFout & port & cnsComma & fileNo & cnsComma & byteCount
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' MakeVBPrompts writes all the necessary PROMPT INPUT statments to the 
+            ' output file.  The "prompts" array is ordered in the following fashion:
+            ' even numbered array elements are prompts with delimiters; odd numbered
+            ' array elements are prompts without delimiters.  So we want the odd ones.
+            '---------------------------------------------------------------------------
+            private sub MakeVBPrompts
+               dim tag, idx, sLine, res
+               idx = 0
+               for each tag in PCM.Tags
+                  if idx = FirstPromptIndex(tag.Name) then
+                     sLine = cnsPrint & cnsQuote & tag.Name & cnsQuote
+                     res   = PCM.WriteLine(sLine)
+                     sLine = cnsInput & Chr(cnA+idx) & cnsDollar
+                     res   = PCM.WriteLine(sLine)
+                  end if
+                  idx = idx + 1
+               next
+            end sub 'MakeVBPrompts
+
+            '---------------------------------------------------------------------------
+            ' MakeVBOuts writes all the necessary FOUT and OUT statments to the output
+            ' file.  These are used in the keyboard BASIC program to write printercode,
+            ' interspersed with prompted values, to the printer.  The locations array is
+            ' ordered in the following fashion: even elements are offsets to the start
+            ' of a prompt; odd elements are offsets to the end of the prompt.  Therefore
+            ' the output lines need to look like this:
+            ' FOUT port,fileNo,(even offset) (offset = number of bytes in this case)
+            ' OUT  port,promptValue (= $A, $B, $C, etc.)
+            ' SEEK fileNo,(odd offset)
+            ' NOTE: Offsets are incremented by 2 because the line prefacing the
+            ' printer code ends in a CR LF pair, giving us 2 more bytes.
+            '---------------------------------------------------------------------------
+            private sub MakeVBOuts(fileSize)
+               dim tag, idx, pidx, numBytes, numTags
+               numTags = PCM.Tags.Count
+               idx     = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition + 2
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  call WriteFileCmd(mPort, 1, numBytes)
+                  pidx = FirstPromptIndex(tag.Name)
+                  call WriteOutCmd(mPort, Chr(cnA+pidx) & cnsDollar)
+                  idx = idx + 1
+               next
+               numBytes = fileSize - PCM.Tags(numTags-1).EndPosition
+               call WriteFileCmd(mPort, 1, numBytes)
+            end sub 'MakeVBOuts
+
+            '---------------------------------------------------------------------------
+            ' CalcCodeSize Calculates the size of the Printer Code with the prompt
+            ' strings removed
+            '---------------------------------------------------------------------------
+            private function CalcCodeSize(codeSize)
+               dim idx, actCodeSize, numBytes, tag      
+               actCodeSize = 0
+               idx         = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  actCodeSize = actCodeSize + numBytes
+                  idx = idx + 1
+               next
+               numBytes = codeSize - PCM.Tags(PCM.Tags.Count-1).EndPosition
+               CalcCodeSize = actCodeSize + numBytes
+            end function
+            
+            '---------------------------------------------------------------------------
+            ' FirstPromptIndex finds the first index in the prompt array of a 
+            ' particular prompt
+            '---------------------------------------------------------------------------
+            private function FirstPromptIndex(sPrompt)
+               dim idx
+               for idx = 0 to PCM.Tags.Count - 1
+                  if StrComp(PCM.Tags(idx).Name, sPrompt) = 0 then
+                     FirstPromptIndex = idx
+                     exit function
+                  end if
+               next
+               FirstPromptIndex = -1 
+            end function
+               
+            '---------------------------------------------------------------------------
+            ' RightSizeBuf enlarges a buffer if necessary, setting the 'oldSize' to the
+            ' 'newSize'
+            '---------------------------------------------------------------------------
+            private sub RightSizeBuf(buff, oldSize, newSize)
+               if newSize > oldSize then
+                  oldSize = newSize
+                  ReDim buff(newSize)
+               end if
+            end sub
+            
+         end class 'KeyboardBasicConverterr      
+      ]]>      
+      </VBScript>
+   </Template>
+   <Template Name="TSC KU-007 Plus (SRAM)" Visible="True" EncoderType="17" Type="Tagged">
+      <DriverParams />
+      <Output FileSeparation="0" PrinterCode="1" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="1" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+         Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - File Names
+         '------------------------------------------------------------------------------
+         const cnsProgram   = "PRINTOUT"
+         const cnsPrintcode = "PRINCODE"
+
+         '------------------------------------------------------------------------------
+         ' Constants - BASIC Commands, values
+         '------------------------------------------------------------------------------
+         const cnsDownload  = "DOWNLOAD"
+         const cnsToFlash   = "F,"
+         const cnsInput     = "INPUT """","
+         const cnsPrint     = "PRINT "
+         const cnsFout      = "FOUT "
+         const cnsOut       = "OUT "
+         const cnsOpen      = "OPEN "
+         const cnsClose     = "CLOSE "
+         const cnsSeek      = "SEEK "
+         const cnsForInput  = "FOR INPUT AS "
+         const cnsEndOfProg = "EOP"
+         const cnsFileOne   = "#1"
+         const cnsDollar    = "$"
+         const cnsSemicolon = ";"
+         const cnsComma     = ","
+         const cnsQuote     = """"
+         const cnA          = 65
+
+         '------------------------------------------------------------------------------
+         ' Constants - Asundry
+         '------------------------------------------------------------------------------
+         const cnPortNumber =  0 'Change this to 1 and hook up hyperterminal to debug
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         ' Configure output file names
+         dim sProgram, sPrintcode
+         sProgram   = PCT.FormatName
+         if Len(sProgram) < 1 then sProgram = cnsProgram
+         sProgram   = UCase(Left(sProgram,8))
+         sPrintcode = sProgram
+         sProgram   = sProgram & ".BAS"
+         sPrintcode = sPrintcode & ".DAT"
+
+         'Run Converter
+         dim Converter
+         set Converter = new KeyboardBasicConverter
+         Converter.Port          = cnPortNumber
+         Converter.ProgramFile   = sProgram
+         Converter.PrintcodeFile = sPrintcode
+         Converter.Convert
+
+
+         '------------------------------------------------------------------------------
+         ' Class KeyboardBasicConverter converts print code to a format accepted by the
+         ' TSC KU-007 Keyboard.
+         '------------------------------------------------------------------------------
+         class KeyboardBasicConverter
+            '--------------------------------------
+            ' Members
+            '--------------------------------------
+            private mPort
+            private mUseFlash
+            private mProgramFile
+            private mPrintcodeFile
+            
+            '--------------------------------------
+            ' Constructor
+            '--------------------------------------
+            private sub Class_Initialize()
+               mProgramFile   = cnsProgram & ".BAS"
+               mPrintcodeFile = cnsPrintcode & ".DAT"
+               mPort          = cnPortNumber
+               mUseFlash      = False
+            end sub
+
+            '--------------------------------------
+            ' Port Property
+            '--------------------------------------
+            public property get Port()
+               Port = mPort
+            end property
+            
+            public property let Port(p)
+               mPort = p
+            end property
+               
+            '--------------------------------------
+            ' UseFlash Property
+            '--------------------------------------
+            public property get UseFlash()
+               UseFlash = mUseFlash
+            end property
+            
+            public property let UseFlash(b)
+               mUseFlash = b
+            end property
+               
+            '--------------------------------------
+            ' ProgramFile Property
+            '--------------------------------------
+            public property get ProgramFile()
+               ProgramFile = mProgramFile
+            end property
+            
+            public property let ProgramFile(f)
+               mProgramFile = f
+            end property
+               
+            '--------------------------------------
+            ' PrintcodeFile Property
+            '--------------------------------------
+            public property get PrintcodeFile()
+               PrintcodeFile = mPrintcodeFile
+            end property
+            
+            public property let PrintcodeFile(f)
+               mPrintcodeFile = f
+            end property
+
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public sub Convert
+               call ConvertFiles(mProgramFile, mPrintcodeFile)
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public Sub ConvertFiles(basicFileName, printerCodeFileName)
+               mProgramFile   = basicFileName
+               mPrintcodeFile = printerCodeFileName
+                
+               '-----------------------------------
+               ' Turn on Manual BOM transfer
+               '-----------------------------------
+               PCM.ManualByteOrderMarkMode = True
+               
+               '-----------------------------------
+               ' Write BASIC code Header
+               '-----------------------------------
+               dim sLine, res
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mProgramFile & cnsQuote
+               res   = PCM.WriteLine(sLine)
+               
+               '-----------------------------------
+               ' Get the tags and write prompts for 
+               ' them to the BASIC output file
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "DO"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               MakeVBPrompts
+
+               '-----------------------------------
+               ' Write BASIC code to open Printer
+               ' code file
+               '-----------------------------------
+               sLine = cnsOpen & cnsQuote & mPrintcodeFile & cnsQuote 
+               sLine = sLine & " " & cnsForInput & cnsFileOne
+               res   = PCM.WriteLine(sLine)
+
+               '-----------------------------------
+               ' Get the prompt locations and 
+               ' create BASIC to write the pieces 
+               ' of the printer code between the 
+               ' prompts to the printer
+               '-----------------------------------
+               dim fileSize
+               fileSize = PCM.InputFileSize
+
+               if PCM.Tags.Count > 0 then
+                  call MakeVBOuts(fileSize)
+               else
+                  call WriteFileCmd(mPort, 1, fileSize+2)
+               end if
+
+               '--------------------------------------
+               ' Write BASIC close  and end of program
+               ' file statements
+               '--------------------------------------
+               res   = PCM.WriteLine(cnsClose & cnsFileOne)
+
+               '--------------------------------------
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "LOOP"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               res   = PCM.WriteLine(cnsEndOfProg)
+
+               '--------------------------------------
+               ' Write the printer code into the
+               ' BASIC File
+               '--------------------------------------
+               call WritePrintcode(fileSize)
+            end sub 'ConvertFiles
+
+            '---------------------------------------------------------------------------
+            ' WritePrintcode copies the print code to the output file
+            '---------------------------------------------------------------------------
+            public sub WritePrintcode(codeSize)
+               dim sLine, fileBuf(), fileBufSize
+               dim numTags, actCodeSize, numRead, res
+
+               numTags     = PCM.Tags.Count
+               fileBufSize = 0
+               
+               '--------------------------------------
+               ' Determine the actual size of the
+               ' printer code file
+               '--------------------------------------
+               if numTags > 0 then
+                  actCodeSize = CalcCodeSize(codeSize)
+               else
+                  actCodeSize = codeSize
+               end If
+
+               '--------------------------------------
+               ' Write the DOWNLOAD Statement
+               '--------------------------------------
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mPrintcodeFile 
+               sLine = sLine & cnsQuote & cnsComma & actCodeSize + 2 & cnsComma
+               res   = PCM.WriteLine(sLine)
+               
+               '--------------------------------------
+               ' Write the Printer Code
+               '--------------------------------------
+               dim idx, numBytes, tag
+               
+               if numTags > 0 then
+                  for each tag in PCM.Tags
+                     if idx = 0 then
+                        numBytes = tag.StartPosition
+                     else
+                        numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                     end if
+                     Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                     numRead = PCM.ReadBytes(fileBuf, numBytes)
+                     numRead = PCM.WriteBytes(fileBuf, numRead)
+                     PCM.InputFilePosition = tag.EndPosition
+                     idx = idx + 1
+                  next
+                  numBytes = codeSize - PCM.Tags(numTags-1).EndPosition
+                  Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                  numRead = PCM.ReadBytes(fileBuf, numBytes)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               else
+                  Call RightSizeBuf(fileBuf, fileBufSize, codeSize)
+                  numRead = PCM.ReadBytes(fileBuf, codeSize)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               end if
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' WriteOutCmd creates a BASIC output statement, "OUT" to port number with
+            ' sText
+            '---------------------------------------------------------------------------
+            public sub WriteOutCmd(port, sText)
+               dim sCmd, res
+               sCmd = cnsOut & port & cnsSemicolon & sText & cnsSemicolon
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' WriteFileCmd creates a BASIC File Ouput statement, "FOUT" to port number,
+            ' from fileNo with byteCount number of bytes
+            '---------------------------------------------------------------------------
+            public sub WriteFileCmd(port, fileNo, byteCount)
+               dim sCmd, res
+               sCmd = cnsFout & port & cnsComma & fileNo & cnsComma & byteCount
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' MakeVBPrompts writes all the necessary PROMPT INPUT statments to the 
+            ' output file.  The "prompts" array is ordered in the following fashion:
+            ' even numbered array elements are prompts with delimiters; odd numbered
+            ' array elements are prompts without delimiters.  So we want the odd ones.
+            '---------------------------------------------------------------------------
+            private sub MakeVBPrompts
+               dim tag, idx, sLine, res
+               idx = 0
+               for each tag in PCM.Tags
+                  if idx = FirstPromptIndex(tag.Name) then
+                     sLine = cnsPrint & cnsQuote & tag.Name & cnsQuote
+                     res   = PCM.WriteLine(sLine)
+                     sLine = cnsInput & Chr(cnA+idx) & cnsDollar
+                     res   = PCM.WriteLine(sLine)
+                  end if
+                  idx = idx + 1
+               next
+            end sub 'MakeVBPrompts
+
+            '---------------------------------------------------------------------------
+            ' MakeVBOuts writes all the necessary FOUT and OUT statments to the output
+            ' file.  These are used in the keyboard BASIC program to write printercode,
+            ' interspersed with prompted values, to the printer.  The locations array is
+            ' ordered in the following fashion: even elements are offsets to the start
+            ' of a prompt; odd elements are offsets to the end of the prompt.  Therefore
+            ' the output lines need to look like this:
+            ' FOUT port,fileNo,(even offset) (offset = number of bytes in this case)
+            ' OUT  port,promptValue (= $A, $B, $C, etc.)
+            ' SEEK fileNo,(odd offset)
+            ' NOTE: Offsets are incremented by 2 because the line prefacing the
+            ' printer code ends in a CR LF pair, giving us 2 more bytes.
+            '---------------------------------------------------------------------------
+            private sub MakeVBOuts(fileSize)
+               dim tag, idx, pidx, numBytes, numTags
+               numTags = PCM.Tags.Count
+               idx     = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition + 2
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  call WriteFileCmd(mPort, 1, numBytes)
+                  pidx = FirstPromptIndex(tag.Name)
+                  call WriteOutCmd(mPort, Chr(cnA+pidx) & cnsDollar)
+                  idx = idx + 1
+               next
+               numBytes = fileSize - PCM.Tags(numTags-1).EndPosition
+               call WriteFileCmd(mPort, 1, numBytes)
+            end sub 'MakeVBOuts
+
+            '---------------------------------------------------------------------------
+            ' CalcCodeSize Calculates the size of the Printer Code with the prompt
+            ' strings removed
+            '---------------------------------------------------------------------------
+            private function CalcCodeSize(codeSize)
+               dim idx, actCodeSize, numBytes, tag      
+               actCodeSize = 0
+               idx         = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  actCodeSize = actCodeSize + numBytes
+                  idx = idx + 1
+               next
+               numBytes = codeSize - PCM.Tags(PCM.Tags.Count-1).EndPosition
+               CalcCodeSize = actCodeSize + numBytes
+            end function
+            
+            '---------------------------------------------------------------------------
+            ' FirstPromptIndex finds the first index in the prompt array of a 
+            ' particular prompt
+            '---------------------------------------------------------------------------
+            private function FirstPromptIndex(sPrompt)
+               dim idx
+               for idx = 0 to PCM.Tags.Count - 1
+                  if StrComp(PCM.Tags(idx).Name, sPrompt) = 0 then
+                     FirstPromptIndex = idx
+                     exit function
+                  end if
+               next
+               FirstPromptIndex = -1 
+            end function
+               
+            '---------------------------------------------------------------------------
+            ' RightSizeBuf enlarges a buffer if necessary, setting the 'oldSize' to the
+            ' 'newSize'
+            '---------------------------------------------------------------------------
+            private sub RightSizeBuf(buff, oldSize, newSize)
+               if newSize > oldSize then
+                  oldSize = newSize
+                  ReDim buff(newSize)
+               end if
+            end sub
+            
+         end class 'KeyboardBasicConverterr      
+      ]]>      
+      </VBScript>
+   </Template>
+   <Template Name="TSC KU-007 Plus (FLASH)" Visible="True" EncoderType="17" Type="Tagged">
+      <DriverParams />
+      <Output FileSeparation="0" PrinterCode="1" ToPrinter="0" />
+      <Performance AllowStaticGraphics="0" AllowStaticObjects="0" AllowSerialization="0" AllowVariableDataOptimization="1" />
+      <Printer SupportedPrinterLanguages="0" PrinterLanguages="" SupportedPrinterManufacturers="0" PrinterManufacturers="" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+         Option Explicit
+         '------------------------------------------------------------------------------
+         ' Constants - File Names
+         '------------------------------------------------------------------------------
+         const cnsProgram   = "PRINTOUT"
+         const cnsPrintcode = "PRINCODE"
+
+         '------------------------------------------------------------------------------
+         ' Constants - BASIC Commands, values
+         '------------------------------------------------------------------------------
+         const cnsDownload  = "DOWNLOAD"
+         const cnsToFlash   = "F,"
+         const cnsInput     = "INPUT """","
+         const cnsPrint     = "PRINT "
+         const cnsFout      = "FOUT "
+         const cnsOut       = "OUT "
+         const cnsOpen      = "OPEN "
+         const cnsClose     = "CLOSE "
+         const cnsSeek      = "SEEK "
+         const cnsForInput  = "FOR INPUT AS "
+         const cnsEndOfProg = "EOP"
+         const cnsFileOne   = "#1"
+         const cnsDollar    = "$"
+         const cnsSemicolon = ";"
+         const cnsComma     = ","
+         const cnsQuote     = """"
+         const cnA          = 65
+
+         '------------------------------------------------------------------------------
+         ' Constants - Asundry
+         '------------------------------------------------------------------------------
+         const cnPortNumber =  0 'Change this to 1 and hook up hyperterminal to debug
+
+         '------------------------------------------------------------------------------
+         ' MAIN
+         '------------------------------------------------------------------------------
+         ' Configure output file names
+         dim sProgram, sPrintcode
+         sProgram   = PCT.FormatName
+         if Len(sProgram) < 1 then sProgram = cnsProgram
+         sProgram   = UCase(Left(sProgram,8))
+         sPrintcode = sProgram
+         sProgram   = sProgram & ".BAS"
+         sPrintcode = sPrintcode & ".DAT"
+
+         'Run Converter
+         dim Converter
+         set Converter = new KeyboardBasicConverter
+         Converter.Port          = cnPortNumber
+         Converter.ProgramFile   = sProgram
+         Converter.PrintcodeFile = sPrintcode
+         Converter.UseFlash      = True
+         Converter.Convert
+
+
+         '------------------------------------------------------------------------------
+         ' Class KeyboardBasicConverter converts print code to a format accepted by the
+         ' TSC KU-007 Keyboard.
+         '------------------------------------------------------------------------------
+         class KeyboardBasicConverter
+            '--------------------------------------
+            ' Members
+            '--------------------------------------
+            private mPort
+            private mUseFlash
+            private mProgramFile
+            private mPrintcodeFile
+            
+            '--------------------------------------
+            ' Constructor
+            '--------------------------------------
+            private sub Class_Initialize()
+               mProgramFile   = cnsProgram & ".BAS"
+               mPrintcodeFile = cnsPrintcode & ".DAT"
+               mPort          = cnPortNumber
+               mUseFlash      = False
+            end sub
+
+            '--------------------------------------
+            ' Port Property
+            '--------------------------------------
+            public property get Port()
+               Port = mPort
+            end property
+            
+            public property let Port(p)
+               mPort = p
+            end property
+               
+            '--------------------------------------
+            ' UseFlash Property
+            '--------------------------------------
+            public property get UseFlash()
+               UseFlash = mUseFlash
+            end property
+            
+            public property let UseFlash(b)
+               mUseFlash = b
+            end property
+               
+            '--------------------------------------
+            ' ProgramFile Property
+            '--------------------------------------
+            public property get ProgramFile()
+               ProgramFile = mProgramFile
+            end property
+            
+            public property let ProgramFile(f)
+               mProgramFile = f
+            end property
+               
+            '--------------------------------------
+            ' PrintcodeFile Property
+            '--------------------------------------
+            public property get PrintcodeFile()
+               PrintcodeFile = mPrintcodeFile
+            end property
+            
+            public property let PrintcodeFile(f)
+               mPrintcodeFile = f
+            end property
+
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public sub Convert
+               call ConvertFiles(mProgramFile, mPrintcodeFile)
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' Convert is the MAIN conversion routine which creates the keyboard BASIC
+            ' file from the printer code
+            '---------------------------------------------------------------------------
+            public Sub ConvertFiles(basicFileName, printerCodeFileName)
+               mProgramFile   = basicFileName
+               mPrintcodeFile = printerCodeFileName
+                
+               '-----------------------------------
+               ' Turn on Manual BOM transfer
+               '-----------------------------------
+               PCM.ManualByteOrderMarkMode = True
+               
+               '-----------------------------------
+               ' Write BASIC code Header
+               '-----------------------------------
+               dim sLine, res
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mProgramFile & cnsQuote
+               res   = PCM.WriteLine(sLine)
+               
+               '-----------------------------------
+               ' Get the tags and write prompts for 
+               ' them to the BASIC output file
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "DO"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               MakeVBPrompts
+
+               '-----------------------------------
+               ' Write BASIC code to open Printer
+               ' code file
+               '-----------------------------------
+               sLine = cnsOpen & cnsQuote & mPrintcodeFile & cnsQuote 
+               sLine = sLine & " " & cnsForInput & cnsFileOne
+               res   = PCM.WriteLine(sLine)
+
+               '-----------------------------------
+               ' Get the prompt locations and 
+               ' create BASIC to write the pieces 
+               ' of the printer code between the 
+               ' prompts to the printer
+               '-----------------------------------
+               dim fileSize
+               fileSize = PCM.InputFileSize
+
+               if PCM.Tags.Count > 0 then
+                  call MakeVBOuts(fileSize)
+               else
+                  call WriteFileCmd(mPort, 1, fileSize+2)
+               end if
+
+               '--------------------------------------
+               ' Write BASIC close  and end of program
+               ' file statements
+               '--------------------------------------
+               res   = PCM.WriteLine(cnsClose & cnsFileOne)
+
+               '--------------------------------------
+               ' If we have tags, cause the program
+               ' to loop
+               '-----------------------------------
+               if PCM.Tags.Count > 0 then
+                  sLine = "LOOP"
+                  res   = PCM.WriteLine(sLine)
+               end if
+               
+               res   = PCM.WriteLine(cnsEndOfProg)
+
+               '--------------------------------------
+               ' Write the printer code into the
+               ' BASIC File
+               '--------------------------------------
+               call WritePrintcode(fileSize)
+            end sub 'ConvertFiles
+
+            '---------------------------------------------------------------------------
+            ' WritePrintcode copies the print code to the output file
+            '---------------------------------------------------------------------------
+            public sub WritePrintcode(codeSize)
+               dim sLine, fileBuf(), fileBufSize
+               dim numTags, actCodeSize, numRead, res
+
+               numTags     = PCM.Tags.Count
+               fileBufSize = 0
+               
+               '--------------------------------------
+               ' Determine the actual size of the
+               ' printer code file
+               '--------------------------------------
+               if numTags > 0 then
+                  actCodeSize = CalcCodeSize(codeSize)
+               else
+                  actCodeSize = codeSize
+               end If
+
+               '--------------------------------------
+               ' Write the DOWNLOAD Statement
+               '--------------------------------------
+               sLine = cnsDownload & " "
+               if mUseFlash = True then sLine = sLine & cnsToFlash 
+               sLine = sLine & cnsQuote & mPrintcodeFile 
+               sLine = sLine & cnsQuote & cnsComma & actCodeSize + 2 & cnsComma
+               res   = PCM.WriteLine(sLine)
+               
+               '--------------------------------------
+               ' Write the Printer Code
+               '--------------------------------------
+               dim idx, numBytes, tag
+               
+               if numTags > 0 then
+                  for each tag in PCM.Tags
+                     if idx = 0 then
+                        numBytes = tag.StartPosition
+                     else
+                        numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                     end if
+                     Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                     numRead = PCM.ReadBytes(fileBuf, numBytes)
+                     numRead = PCM.WriteBytes(fileBuf, numRead)
+                     PCM.InputFilePosition = tag.EndPosition
+                     idx = idx + 1
+                  next
+                  numBytes = codeSize - PCM.Tags(numTags-1).EndPosition
+                  Call RightSizeBuf(fileBuf, fileBufSize, numBytes)
+                  numRead = PCM.ReadBytes(fileBuf, numBytes)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               else
+                  Call RightSizeBuf(fileBuf, fileBufSize, codeSize)
+                  numRead = PCM.ReadBytes(fileBuf, codeSize)
+                  numRead = PCM.WriteBytes(fileBuf, numRead)
+               end if
+            end sub
+            
+            '---------------------------------------------------------------------------
+            ' WriteOutCmd creates a BASIC output statement, "OUT" to port number with
+            ' sText
+            '---------------------------------------------------------------------------
+            public sub WriteOutCmd(port, sText)
+               dim sCmd, res
+               sCmd = cnsOut & port & cnsSemicolon & sText & cnsSemicolon
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' WriteFileCmd creates a BASIC File Ouput statement, "FOUT" to port number,
+            ' from fileNo with byteCount number of bytes
+            '---------------------------------------------------------------------------
+            public sub WriteFileCmd(port, fileNo, byteCount)
+               dim sCmd, res
+               sCmd = cnsFout & port & cnsComma & fileNo & cnsComma & byteCount
+               res  = PCM.WriteLine(sCmd)   
+            end sub
+
+            '---------------------------------------------------------------------------
+            ' MakeVBPrompts writes all the necessary PROMPT INPUT statments to the 
+            ' output file.  The "prompts" array is ordered in the following fashion:
+            ' even numbered array elements are prompts with delimiters; odd numbered
+            ' array elements are prompts without delimiters.  So we want the odd ones.
+            '---------------------------------------------------------------------------
+            private sub MakeVBPrompts
+               dim tag, idx, sLine, res
+               idx = 0
+               for each tag in PCM.Tags
+                  if idx = FirstPromptIndex(tag.Name) then
+                     sLine = cnsPrint & cnsQuote & tag.Name & cnsQuote
+                     res   = PCM.WriteLine(sLine)
+                     sLine = cnsInput & Chr(cnA+idx) & cnsDollar
+                     res   = PCM.WriteLine(sLine)
+                  end if
+                  idx = idx + 1
+               next
+            end sub 'MakeVBPrompts
+
+            '---------------------------------------------------------------------------
+            ' MakeVBOuts writes all the necessary FOUT and OUT statments to the output
+            ' file.  These are used in the keyboard BASIC program to write printercode,
+            ' interspersed with prompted values, to the printer.  The locations array is
+            ' ordered in the following fashion: even elements are offsets to the start
+            ' of a prompt; odd elements are offsets to the end of the prompt.  Therefore
+            ' the output lines need to look like this:
+            ' FOUT port,fileNo,(even offset) (offset = number of bytes in this case)
+            ' OUT  port,promptValue (= $A, $B, $C, etc.)
+            ' SEEK fileNo,(odd offset)
+            ' NOTE: Offsets are incremented by 2 because the line prefacing the
+            ' printer code ends in a CR LF pair, giving us 2 more bytes.
+            '---------------------------------------------------------------------------
+            private sub MakeVBOuts(fileSize)
+               dim tag, idx, pidx, numBytes, numTags
+               numTags = PCM.Tags.Count
+               idx     = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition + 2
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  call WriteFileCmd(mPort, 1, numBytes)
+                  pidx = FirstPromptIndex(tag.Name)
+                  call WriteOutCmd(mPort, Chr(cnA+pidx) & cnsDollar)
+                  idx = idx + 1
+               next
+               numBytes = fileSize - PCM.Tags(numTags-1).EndPosition
+               call WriteFileCmd(mPort, 1, numBytes)
+            end sub 'MakeVBOuts
+
+            '---------------------------------------------------------------------------
+            ' CalcCodeSize Calculates the size of the Printer Code with the prompt
+            ' strings removed
+            '---------------------------------------------------------------------------
+            private function CalcCodeSize(codeSize)
+               dim idx, actCodeSize, numBytes, tag      
+               actCodeSize = 0
+               idx         = 0
+               for each tag in PCM.Tags
+                  if idx = 0 then
+                     numBytes = tag.StartPosition
+                  else
+                     numBytes = tag.StartPosition - PCM.Tags(idx-1).EndPosition
+                  end if
+                  actCodeSize = actCodeSize + numBytes
+                  idx = idx + 1
+               next
+               numBytes = codeSize - PCM.Tags(PCM.Tags.Count-1).EndPosition
+               CalcCodeSize = actCodeSize + numBytes
+            end function
+            
+            '---------------------------------------------------------------------------
+            ' FirstPromptIndex finds the first index in the prompt array of a 
+            ' particular prompt
+            '---------------------------------------------------------------------------
+            private function FirstPromptIndex(sPrompt)
+               dim idx
+               for idx = 0 to PCM.Tags.Count - 1
+                  if StrComp(PCM.Tags(idx).Name, sPrompt) = 0 then
+                     FirstPromptIndex = idx
+                     exit function
+                  end if
+               next
+               FirstPromptIndex = -1 
+            end function
+               
+            '---------------------------------------------------------------------------
+            ' RightSizeBuf enlarges a buffer if necessary, setting the 'oldSize' to the
+            ' 'newSize'
+            '---------------------------------------------------------------------------
+            private sub RightSizeBuf(buff, oldSize, newSize)
+               if newSize > oldSize then
+                  oldSize = newSize
+                  ReDim buff(newSize)
+               end if
+            end sub
+            
+         end class 'KeyboardBasicConverterr      
+      ]]>      
+      </VBScript>
+   </Template>
+   <Template Name="TSC KP-100/200" Visible="True" EncoderType="17" Type="Prompted">
+      <DriverParams />
+      <Output FileSeparation="2" PrinterCode="0" ToPrinter="0" />
+      <Performance AllowStaticGraphics="2" AllowStaticObjects="2" AllowSerialization="1" AllowVariableDataOptimization="2" />
+      <Printer SupportedPrinterLanguages="1" PrinterLanguages="TSC" SupportedPrinterManufacturers="1" PrinterManufacturers="TSC" />
+      <TagValues>
+         <Value Name="Header" />
+         <Value Name="Footer" />
+         <Value Name="StartLine" />
+         <Value Name="EndLine" />
+         <Value Name="StartFieldDelimiter" />
+         <Value Name="EndFieldDelimiter" />
+         <Value Name="StartPrintCode" />
+         <Value Name="EndPrintCode" />
+      </TagValues>
+      <TranslationTable />
+      <VBScript>
+      <![CDATA[
+      Option Explicit
+
+      '------------------------------------------------------------------------------
+      ' Constants - File Names
+      '------------------------------------------------------------------------------
+      const cnsDownload  = "DOWNLOAD"
+      const cnsExport    = "EXPORT"
+      const cnsBas       = "BAS"
+      const cnsQuote     = """"
+         
+      '------------------------------------------------------------------------------
+      ' Variables
+      '------------------------------------------------------------------------------
+      Dim sLine, sULine, bytes(1024)
+      Dim res, NumBytes, numRead
+
+      NumBytes = 1024
+
+      '------------------------------------------------------------------------------
+      ' MAIN
+      '------------------------------------------------------------------------------
+      sLine  = PCM.ReadLine
+      sULine = UCase(sLine)
+
+      if InStr(sULine, cnsDownload) >= 0 Then
+         Dim FileNameConv
+         Set FileNameConv = new KPFileNameConverter        
+         FileNameConv.InputLine = sULine
+         sLine = FileNameConv.GetOutputLine
+      end if
+
+      res = PCM.WriteLine(sLine)
+
+      '--------------------------------------
+      ' Write out the Print Code
+      '--------------------------------------
+      do while PCM.FileAtEOF <> True
+         numRead = PCM.ReadBytes(bytes,NumBytes)
+         res = PCM.WriteBytes(bytes, numRead)
+      loop
+
+
+      '------------------------------------------------------------------------------
+      ' Class KPFileNameConverter converts a DOWNLOAD "SOMETHING" line into its 
+      ' proper format for the TSC KP-100/200 Keyboard.
+      '------------------------------------------------------------------------------
+      class KPFileNameConverter
+         '--------------------------------------
+         ' Members
+         '--------------------------------------
+         private sFileName
+         private sExt
+         private sStartOfLine
+         private sEndOfLine
+         private sInputLine
+         
+         '--------------------------------------
+         ' Initialize
+         '--------------------------------------
+         private sub Class_Initialize()
+            sFileName = ""
+            sExt      = ""
+            sStartOfLine = ""
+            sEndOfLine   = ""
+            sInputLine = ""
+         end sub
+
+         '--------------------------------------
+         ' InputLine Property
+         '--------------------------------------
+         public property get InputLine()
+            InputLine = sInputLine
+         end property   
+
+         public property let InputLine(sLine)
+            sInputLine = sLine    
+         end property
+         
+         '--------------------------------------
+         ' Transform Input Line to Output
+         '--------------------------------------
+         public function GetOutputLine
+            dim sFile, sOutput
+            dim numPieces, pieces, i
+
+            pieces    = Split(sInputLine, cnsQuote)
+            numPieces = UBound(pieces) - LBound(pieces)
+            
+            if numPieces > 1 then
+               sStartOfLine = pieces(0)
+               sFile        = pieces(1)
+               for i = 2 to numPieces - 1
+                  sEndOfLine = sEndOfLine & pieces(i)
+               next
+               Call FixFilename(sFile)
+               GetOutputLine = sStartOfLine & cnsQuote & sFileName & "." & sExt & cnsQuote & sEndOfLine
+            else
+               GetOutputLine = sInputLine
+            end if            
+         end function
+                
+         '--------------------------------------
+         ' Split Filename into Parts
+         '--------------------------------------
+         private sub FixFilename(sName)
+            dim pieces, sOutName, sWork, bDot
+            pieces = Split(sName, ".")
+            if UBound(pieces) - LBound(pieces) >= 1 then
+               sFileName = pieces(0)
+               sExt      = pieces(1)
+            else
+               sFileName = sName
+               sExt      = cnsBas
+            end if
+            if sFileName = cnsExport then sFileName = PCT.FormatName
+            if Len(sFileName) <= 0 then sFileName = cnsExport
+            if sExt <> cnsBas then sExt = cnsBas
+            sFileName = Trim(sFileName)
+            sOutName = ""
+            dim i, sInvalid
+            sInvalid = "~~!@#$%^&*()_+=-{}[]|\\/?<>,` ."
+            for i = 1 to Len(sFileName)
+               sWork = Mid(sFileName, i, 1)
+               if InStr(1, sInvalid, sWork) > 0 then
+                  sWork = "_"
+               end if
+               sOutName = sOutName & sWork            
+            next
+            sFileName = Left(sOutName,8)
+         end sub         
+      end class 'KPFileName
+      ]]>      
+   </VBScript>
+   </Template>
+</Seagull_Template_Database>

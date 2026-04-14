@@ -1,0 +1,1 @@
+Printer\BarCodeModel\bartend.exe /F=PKTM2.btw /P /X

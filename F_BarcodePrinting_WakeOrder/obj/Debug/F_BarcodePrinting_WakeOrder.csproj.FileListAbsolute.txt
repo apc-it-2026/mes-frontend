@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.F_BarcodePrinting_WakeOrderForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.F_MMS_SelectTurn.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.WakeOrder_QrCodePrint.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_BarcodePrinting_WakeOrder\obj\Debug\F_BarcodePrinting_WakeOrder.csproj.CoreCompileInputs.cache

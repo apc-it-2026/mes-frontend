@@ -1,0 +1,1 @@
+start Printer\BarCodeModel\bartend.exe /F=ÎïÁÏÌõÂë.btw 

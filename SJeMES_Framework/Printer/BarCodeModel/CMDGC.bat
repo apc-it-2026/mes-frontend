@@ -1,0 +1,1 @@
+LableDemo\BAR\bartend.exe /F=LableDemo2.BTW /p /x

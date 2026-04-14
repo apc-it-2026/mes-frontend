@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.ImportInnerBoxForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ImportInnerBox\obj\Debug\ImportInnerBox.csprojAssemblyReference.cache

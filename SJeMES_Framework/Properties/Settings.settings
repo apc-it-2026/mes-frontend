@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SJeMES_Framework.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SJeMES_Framework_SJ_WebService_SJ_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://112.74.49.34:8080/SJ-WebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,23 @@
+﻿// 
+// This file supports aliasing font names.  It's primary use is for when a font is not found
+// on the system.  For example, if your format uses "Zebra Font 0", and you switch to the Eltron
+// printer, the "Zebra Font 0" font will not be found.  Using the list below, BarTender will
+// use "Eltron Font 0" instead of "Zebra Font 0". 
+//
+// Example Format Entries:
+// "Citizen Font 0", "Eltron Font 0", "Zebra Font 0"
+// "Zebra Triumvirate", "Intermec Font 5"
+// "Eltron Font 0", "Intermec Font 0"
+"SATO Font U, S, & M","SATO Font U"
+"SATO Font WB & WL","SATO Font WB"
+"SATO Vector A","SATO Vector B","SATO Helvetica"
+"SATO Vector A (Dk. Gray)","SATO Vector A (Lt. Gray)","SATO Vector A (Med. Gray)","SATO Vector B (Dk. Gray)","SATO Vector B (Lt. Gray)","SATO Vector B (Med. Gray)","SATO Helvetica Gray"
+"SATO Vector A (Dk. Shadow)","SATO Vector A (Lt. Shadow)","SATO Vector B (Dk. Shadow)","SATO Vector B (Lt. Shadow)","SATO Helvetica Shadow"
+"SATO Vector A (Outline)","SATO Vector B (Outline)","SATO Helvetica Outline"
+"Zebra Courier A","Zebra Courier"
+"Zebra Courier B (Upper Case)","Zebra Font B"
+"Zebra Courier D","Zebra Courier"
+"Zebra Courier F","Zebra Font F"
+"Zebra Courier G","Zebra Font G"
+"Zebra CG Triumvirate","Zebra Triumvirate"
+"TSC Roman","TSC Sans Serif"

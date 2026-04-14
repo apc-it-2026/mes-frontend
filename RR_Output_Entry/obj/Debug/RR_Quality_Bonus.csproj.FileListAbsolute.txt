@@ -1,0 +1,17 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\RR_Output_Entry.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\NPOI.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\NPOI.OOXML.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\NPOI.OpenXml4Net.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\OMCS.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\ESBasic.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Output_Entry.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Quality_Bonus.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Quality_Bonus.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Quality_Bonus.csproj.CopyComplete
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Output_Entry.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Quality_Bonus.RR_Quality_Bonus.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\RR_Output_Entry.exe.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\bin\Debug\RR_Output_Entry.exe
+D:\TFS_Source_Code\MES_WMS\KZ_MES\RR_Output_Entry\obj\Debug\RR_Output_Entry.exe

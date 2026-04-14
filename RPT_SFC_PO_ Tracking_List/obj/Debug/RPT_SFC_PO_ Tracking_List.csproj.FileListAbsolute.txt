@@ -1,0 +1,18 @@
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO_ Tracking_List.csprojAssemblyReference.cache
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO__Tracking_List.Form.resources
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO__Tracking_List.Properties.Resources.resources
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO_ Tracking_List.csproj.GenerateResource.cache
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\RPT_SFC_PO_ Tracking_List.exe.config
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\RPT_SFC_PO_ Tracking_List.exe
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\RPT_SFC_PO_ Tracking_List.pdb
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\MaterialSkin.dll
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\Newtonsoft.Json.dll
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\SJeMES_Control_Library.dll
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\SJeMES_Framework.dll
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\Newtonsoft.Json.xml
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\SJeMES_Control_Library.pdb
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\SJeMES_Framework.pdb
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\bin\Debug\SJeMES_Framework.dll.config
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO_ Tracking_List.csproj.CopyComplete
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO_ Tracking_List.exe
+F:\Server Project\Mes-Plant\source\KZ_MES\RPT_SFC_PO_ Tracking_List\obj\Debug\RPT_SFC_PO_ Tracking_List.pdb

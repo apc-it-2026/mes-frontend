@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D5E97BC-D97E-485E-B77E-CA503BB86DB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>F_TMS_TierMeeting3_Main</RootNamespace>
+    <AssemblyName>F_TMS_TierMeeting3_Main</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutocompleteMenu">
+      <HintPath>..\F_JMS_QrCode_BarCode\bin\Debug\AutocompleteMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="CusContorl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\library\CusContorl.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\..\administrator  manual\开发工具\类库\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductionEfficiencyForm">
+      <HintPath>..\ProductionEfficiencyForm\bin\Debug\ProductionEfficiencyForm.dll</HintPath>
+    </Reference>
+    <Reference Include="SJeMES_Control_Library">
+      <HintPath>..\..\..\administrator  manual\开发工具\类库\SJeMES_Control_Library.dll</HintPath>
+    </Reference>
+    <Reference Include="SJeMES_Framework">
+      <HintPath>..\..\..\administrator  manual\开发工具\类库\SJeMES_Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceRecord\TMS_AttendanceRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceRecord\TMS_AttendanceRecord.Designer.cs">
+      <DependentUpon>TMS_AttendanceRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\POComRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\POComRateForm.Designer.cs">
+      <DependentUpon>POComRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Efficiency\ThreeEfficiencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Efficiency\ThreeEfficiencyForm.designer.cs">
+      <DependentUpon>ThreeEfficiencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntroForm.Designer.cs">
+      <DependentUpon>IntroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasicInformation\TMS_BasicInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasicInformation\TMS_BasicInformation.Designer.cs">
+      <DependentUpon>TMS_BasicInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalyzingTool\TMS_AnalyzingTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalyzingTool\TMS_AnalyzingTool.Designer.cs">
+      <DependentUpon>TMS_AnalyzingTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaturityAssessment\MaturityAssessmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaturityAssessment\MaturityAssessmentForm.designer.cs">
+      <DependentUpon>MaturityAssessmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingCharter\TMS_MeetingCharter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetingCharter\TMS_MeetingCharter.Designer.cs">
+      <DependentUpon>TMS_MeetingCharter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parameters.cs" />
+    <Compile Include="Quality\DetailQualityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quality\DetailQualityForm.Designer.cs">
+      <DependentUpon>DetailQualityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select department\SelectDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select department\SelectDepartmentForm.Designer.cs">
+      <DependentUpon>SelectDepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KaizenActionPlan\KaizenActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KaizenActionPlan\KaizenActionForm.Designer.cs">
+      <DependentUpon>KaizenActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\Tier3DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\Tier3DeliveryForm.Designer.cs">
+      <DependentUpon>Tier3DeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kaizen\DetailKaizenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kaizen\DetailKaizenForm.Designer.cs">
+      <DependentUpon>DetailKaizenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\KPIDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\KPIDeliveryForm.Designer.cs">
+      <DependentUpon>KPIDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Safety\DetailSafetyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Safety\DetailSafetyForm.Designer.cs">
+      <DependentUpon>DetailSafetyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface.cs" />
+    <Compile Include="Delivery\MDPDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\MDPDeliveryForm.Designer.cs">
+      <DependentUpon>MDPDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\PDPDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\PDPDeliveryForm.Designer.cs">
+      <DependentUpon>PDPDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\SDPDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\SDPDeliveryForm.Designer.cs">
+      <DependentUpon>SDPDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery\Tier2DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delivery\Tier2DeliveryForm.Designer.cs">
+      <DependentUpon>Tier2DeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="AttendanceRecord\TMS_AttendanceRecord.resx">
+      <DependentUpon>TMS_AttendanceRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\POComRateForm.resx">
+      <DependentUpon>POComRateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Efficiency\ThreeEfficiencyForm.resx">
+      <DependentUpon>ThreeEfficiencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntroForm.resx">
+      <DependentUpon>IntroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicInformation\TMS_BasicInformation.resx">
+      <DependentUpon>TMS_BasicInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalyzingTool\TMS_AnalyzingTool.resx">
+      <DependentUpon>TMS_AnalyzingTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaturityAssessment\MaturityAssessmentForm.resx">
+      <DependentUpon>MaturityAssessmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeetingCharter\TMS_MeetingCharter.resx">
+      <DependentUpon>TMS_MeetingCharter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quality\DetailQualityForm.resx">
+      <DependentUpon>DetailQualityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select department\SelectDepartmentForm.resx">
+      <DependentUpon>SelectDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KaizenActionPlan\KaizenActionForm.resx">
+      <DependentUpon>KaizenActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\Tier2DeliveryForm.resx">
+      <DependentUpon>Tier2DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\Tier3DeliveryForm.resx">
+      <DependentUpon>Tier3DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kaizen\DetailKaizenForm.resx">
+      <DependentUpon>DetailKaizenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\KPIDeliveryForm.resx">
+      <DependentUpon>KPIDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Safety\DetailSafetyForm.resx">
+      <DependentUpon>DetailSafetyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\MDPDeliveryForm.resx">
+      <DependentUpon>MDPDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\PDPDeliveryForm.resx">
+      <DependentUpon>PDPDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delivery\SDPDeliveryForm.resx">
+      <DependentUpon>SDPDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Waiting.resx">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

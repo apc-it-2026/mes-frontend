@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.Form1.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WindowsServiceClient\obj\Debug\WindowsServiceClient.csprojAssemblyReference.cache

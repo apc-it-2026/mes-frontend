@@ -1,0 +1,1 @@
+Printer\BarCodeModel\bartend.exe /F=SNTM_2.btw /P /X

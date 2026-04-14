@@ -1,0 +1,4 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductReprot\obj\Debug\F_CraftProductReprot.F_CraftProductReprotForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductReprot\obj\Debug\F_CraftProductReprot.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductReprot\obj\Debug\F_CraftProductReprot.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductReprot\obj\Debug\F_CraftProductReprot.csproj.CoreCompileInputs.cache

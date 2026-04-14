@@ -1,0 +1,8 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.Shift_Setting_Edit.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_TrackIn_List.OrgSelectForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_TrackIn_List.PlantSelectForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.Shift_Setting_AddShift.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.F_SFC_Shift_Setting.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_Shift_Setting\obj\Debug\F_SFC_Shift_Setting.csproj.CoreCompileInputs.cache

@@ -1,0 +1,7 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.SelectCause.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.F_Abnormal_Registration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.ItemSelectForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.SelectResponUnit.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Abnormal_Registration\obj\Debug\F_Abnormal_Registration.csproj.CoreCompileInputs.cache

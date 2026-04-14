@@ -1,0 +1,7 @@
+{
+  "language": "cn",
+  "org": "mes",
+  "usercode": "59299",
+  "api": "http://localhost:60626/api/CommonCall",
+  "webservice": "http://10.2.1.50:8084/SJ-WebService.asmx"
+}

@@ -1,0 +1,17 @@
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole Buffing Entry.pdb
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Newtonsoft.Json.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\SJeMES_Control_Library.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\SJeMES_Framework.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\GDSJ_Framework.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Newtonsoft.Json.xml
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.Form1.resources
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.Properties.Resources.resources
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.csproj.GenerateResource.cache
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.csproj.CoreCompileInputs.cache
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.csproj.CopyComplete
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.pdb
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\AutocompleteMenu.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole Buffing Entry.dll.config
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole Buffing Entry.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole Buffing Entry.csprojAssemblyReference.cache

@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_WOO_ManualInput\obj\Debug\F_WOO_ManualInput.ManualInput_SelectTurn.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_WOO_ManualInput\obj\Debug\F_WOO_ManualInput.F_WOO_ManualInput.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_WOO_ManualInput\obj\Debug\F_WOO_ManualInput.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_WOO_ManualInput\obj\Debug\F_WOO_ManualInput.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_WOO_ManualInput\obj\Debug\F_WOO_ManualInput.csproj.CoreCompileInputs.cache

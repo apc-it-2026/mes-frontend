@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.ProjectInstaller.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.WorkingHoursService.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\WorkingHoursService\obj\Debug\WorkingHoursService.csprojAssemblyReference.cache

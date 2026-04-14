@@ -1,0 +1,8 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.BadReason.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.BadRegistration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.ResponsibleUnit.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.SampleLogoList.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.ucPage.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Bad_Registration\obj\Debug\F_Bad_Registration.csproj.CoreCompileInputs.cache

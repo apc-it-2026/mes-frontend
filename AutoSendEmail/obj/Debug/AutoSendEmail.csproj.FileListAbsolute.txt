@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.AutoSendEmail.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\AutoSendEmail\obj\Debug\AutoSendEmail.exe.config

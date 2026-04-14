@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_QCO_PlanningImport\obj\Debug\F_QCO_PlanningImport.QCOPlanImport.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_QCO_PlanningImport\obj\Debug\F_QCO_PlanningImport.QCOPlanImport_Modify.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_QCO_PlanningImport\obj\Debug\F_QCO_PlanningImport.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_QCO_PlanningImport\obj\Debug\F_QCO_PlanningImport.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_QCO_PlanningImport\obj\Debug\F_QCO_PlanningImport.csproj.CoreCompileInputs.cache

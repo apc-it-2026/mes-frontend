@@ -1,0 +1,69 @@
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.exe.config
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.exe
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.pdb
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.AssemblyReference.cache
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Kaizen_Form.resources
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Properties.Resources.resources
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.GenerateResource.cache
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.CoreCompileInputs.cache
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.exe
+H:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.pdb
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.exe.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.exe
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\KaizenForm.pdb
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\AutocompleteMenu.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\CusContorl.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\NewExportExcels.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\Newtonsoft.Json.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\SJeMES_Control_Library.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\SJeMES_Framework.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\SJeMES_Framework_NETCore.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\MaterialSkin.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\FastReport.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\FastReport.Bars.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\CusContorl.pdb
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\CusContorl.dll.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\AutocompleteMenu.dll.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\Newtonsoft.Json.xml
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\SJeMES_Control_Library.pdb
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.pdb
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.dll.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.exe.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.XmlSerializers.dll
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csprojAssemblyReference.cache
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.exe.config
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Imageview.resources
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Kaizan_reports.resources
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.KaizenForm.resources
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Properties.Resources.resources
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.GenerateResource.cache
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.CoreCompileInputs.cache
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.CopyComplete
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.exe
+D:\MES 800 Final Version Source Code\KZ_MES\KaizenForm\obj\Debug\KaizenForm.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\KaizenForm.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\MaterialSkin.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\FastReport.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\FastReport.Bars.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\AutocompleteMenu.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\SJeMES_Control_Library.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.exe.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\GDSJ_Framework.XmlSerializers.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Imageview.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Kaizan_reports.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.KaizenForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.csproj.CopyComplete
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\KaizenForm.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\KaizenForm.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\obj\Debug\KaizenForm.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\KaizenForm\bin\Debug\Newtonsoft.Json.xml

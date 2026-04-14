@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.ProductionInputOrderQuery.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionInputOrderQueryForm\obj\Debug\ProductionInputOrderQuery.csprojAssemblyReference.cache

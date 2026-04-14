@@ -1,0 +1,944 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\rr_output_entry\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|solutionrelative:rr_output_entry\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\skillbonusupload\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|solutionrelative:skillbonusupload\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\rr_output_entry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|solutionrelative:rr_output_entry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\skillbonusupload\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|solutionrelative:skillbonusupload\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\processallocation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|solutionrelative:processallocation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|RR_Output_Entry||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\rr_output_entry\\rr_output_entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|solutionrelative:rr_output_entry\\rr_output_entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\rr_output_entry\\rr_output_entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|solutionrelative:rr_output_entry\\rr_output_entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\cuttingallocation\\cuttingallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|solutionrelative:cuttingallocation\\cuttingallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\cuttingallocation\\cuttingallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|solutionrelative:cuttingallocation\\cuttingallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\processallocation\\processallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|solutionrelative:processallocation\\processallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\processallocation\\processallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5E25B9BD-FCEB-4E96-BED7-2C41713FD5C3}|ProcessAllocation\\ProcessAllocation.csproj|solutionrelative:processallocation\\processallocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\investmentreturnorder\\investmentreturnorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|solutionrelative:investmentreturnorder\\investmentreturnorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\investmentreturnorder\\investmentreturnorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|solutionrelative:investmentreturnorder\\investmentreturnorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|InvestmentReturnOrder||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\investmentreturnorder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28908B54-5243-4228-BEFE-1359C0CA44C6}|InvestmentReturnOrder\\InvestmentReturnOrder.csproj|solutionrelative:investmentreturnorder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\f_sfc_trackin_assemblyorder\\f_sfc_trackin_assemblyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|solutionrelative:f_sfc_trackin_assemblyorder\\f_sfc_trackin_assemblyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\f_sfc_trackin_assemblyorder\\f_sfc_trackin_assemblyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|solutionrelative:f_sfc_trackin_assemblyorder\\f_sfc_trackin_assemblyorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\f_sfc_trackin_assemblyorder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2153DD3E-F40B-47B5-A88D-E6CFFFC28A74}|F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.csproj|solutionrelative:f_sfc_trackin_assemblyorder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TFS_Source_Code\\AEQS\\Client\\SJeMES_Framework\\WebAPI\\WebAPIHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ProcessAllocation||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\final_ie\\final_ie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|solutionrelative:final_ie\\final_ie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\final_ie\\final_ie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|solutionrelative:final_ie\\final_ie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|ThirdEfficiency_Kanban||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\kpi_final_score\\kpi_final_score\\kpi_final_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|solutionrelative:kpi_final_score\\kpi_final_score\\kpi_final_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\kpi_final_score\\kpi_final_score\\emp_kpi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|solutionrelative:kpi_final_score\\kpi_final_score\\emp_kpi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A91FFE65-3BDC-4875-A128-AB367E523EC1}|KaizenExcelUpload\\KaizenExcelUpload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\kaizenexcelupload\\kaizenupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A91FFE65-3BDC-4875-A128-AB367E523EC1}|KaizenExcelUpload\\KaizenExcelUpload.csproj|solutionrelative:kaizenexcelupload\\kaizenupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TFS_Source_Code\\MES_WMS\\SJeMES_API\\KZ_RTLAPI\\Controllers\\OutsourcingManualServer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\cuttingallocation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0627E7D-4994-4EB1-8BF5-3EFD01D2B7E8}|CuttingAllocation\\CuttingAllocation.csproj|solutionrelative:cuttingallocation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CuttingAllocation||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\kpi_final_score\\kpi_final_score\\kpi_final_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}|KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE.csproj|solutionrelative:kpi_final_score\\kpi_final_score\\kpi_final_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Replacement_Data||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\replacement_data\\replacement_data\\replacement_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|solutionrelative:replacement_data\\replacement_data\\replacement_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\replacement_data\\replacement_data\\replacement_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|solutionrelative:replacement_data\\replacement_data\\replacement_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|KaizenExcelUpload||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\replacement_data\\replacement_data\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B04BAF70-FED2-47E0-8224-A4E483DB1B2B}|Replacement_Data\\Replacement_Data\\Replacement_Data.csproj|solutionrelative:replacement_data\\replacement_data\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\repairs_entry\\haulting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|solutionrelative:repairs_entry\\haulting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\repairs_entry\\haulting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|solutionrelative:repairs_entry\\haulting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\repairs_entry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|solutionrelative:repairs_entry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Data_Lock||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\repairs_entry\\repair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8A571F31-1512-4845-AB97-C176C7714877}|Repairs_Entry\\REPAIRS_DATA.csproj|solutionrelative:repairs_entry\\repair.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|PO_Finish_Upload||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC8C1D77-B870-4D99-BD54-53F4D585AAED}|WorkingHoursRecord\\WorkingHoursRecord.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\workinghoursrecord\\workinghoursrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC8C1D77-B870-4D99-BD54-53F4D585AAED}|WorkingHoursRecord\\WorkingHoursRecord.csproj|solutionrelative:workinghoursrecord\\workinghoursrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC8C1D77-B870-4D99-BD54-53F4D585AAED}|WorkingHoursRecord\\WorkingHoursRecord.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\workinghoursrecord\\workinghoursrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BC8C1D77-B870-4D99-BD54-53F4D585AAED}|WorkingHoursRecord\\WorkingHoursRecord.csproj|solutionrelative:workinghoursrecord\\workinghoursrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56305BE4-DAD2-457E-9BE9-801EE15EB1D3}|StitchingInput2\\StitchingInput2.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\stitchinginput2\\stitchinginput2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56305BE4-DAD2-457E-9BE9-801EE15EB1D3}|StitchingInput2\\StitchingInput2.csproj|solutionrelative:stitchinginput2\\stitchinginput2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B07AE1-022C-4EC3-9BED-5004770E4F4E}|Data_Lock\\Data_Lock.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\data_lock\\data_lock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43B07AE1-022C-4EC3-9BED-5004770E4F4E}|Data_Lock\\Data_Lock.csproj|solutionrelative:data_lock\\data_lock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\thirdefficiency_kanban\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|solutionrelative:thirdefficiency_kanban\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\thirdefficiency_kanban\\thirdefficiency_kanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|solutionrelative:thirdefficiency_kanban\\thirdefficiency_kanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\thirdefficiency_kanban\\thirdefficiency_kanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A713E9F2-CF8B-4087-AC92-502FA144B65D}|ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj|solutionrelative:thirdefficiency_kanban\\thirdefficiency_kanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\upload_tpph\\upload_tpph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|solutionrelative:upload_tpph\\upload_tpph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\final_ie\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB034F88-C978-48B1-BA9F-653639577857}|Final_IE\\Final_IE.csproj|solutionrelative:final_ie\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\upload_tpph\\upload_tpph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|solutionrelative:upload_tpph\\upload_tpph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\skillbonusupload\\skillbonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|solutionrelative:skillbonusupload\\skillbonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\upload_tpph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8D49289-3411-4E26-A089-CD07357026F5}|Upload_TPPH\\Upload_TPPH.csproj|solutionrelative:upload_tpph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\skillbonusupload\\skillbonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23BBBE6D-2D31-4DF9-BB64-D645F994492D}|SkillBonusUpload\\SkillBonusUpload.csproj|solutionrelative:skillbonusupload\\skillbonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D65C4EF-8F25-46C9-9053-2A954016BA55}|QualityBonusupload\\QualityBonusupload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\qualitybonusupload\\qualitybonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0D65C4EF-8F25-46C9-9053-2A954016BA55}|QualityBonusupload\\QualityBonusupload.csproj|solutionrelative:qualitybonusupload\\qualitybonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D65C4EF-8F25-46C9-9053-2A954016BA55}|QualityBonusupload\\QualityBonusupload.csproj|D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\qualitybonusupload\\qualitybonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D65C4EF-8F25-46C9-9053-2A954016BA55}|QualityBonusupload\\QualityBonusupload.csproj|solutionrelative:qualitybonusupload\\qualitybonusupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22C8C745-5CB2-4A5D-91D0-8352F99EA096}|RR_Output_Entry\\RR_Output_Entry.csproj|d:\\tfs_source_code\\mes_wms\\kz_mes\\rr_output_entry\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Interface.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\Interface.cs",
+              "RelativeDocumentMoniker": "SkillBonusUpload\\Interface.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\Interface.cs",
+              "RelativeToolTip": "SkillBonusUpload\\Interface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T06:28:27.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Interface.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\Interface.cs",
+              "RelativeDocumentMoniker": "RR_Output_Entry\\Interface.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\Interface.cs",
+              "RelativeToolTip": "RR_Output_Entry\\Interface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T06:28:18.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RR_Output_Entry.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.cs",
+              "RelativeDocumentMoniker": "RR_Output_Entry\\RR_Output_Entry.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.cs",
+              "RelativeToolTip": "RR_Output_Entry\\RR_Output_Entry.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAEwCwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T06:14:41.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\Program.cs",
+              "RelativeDocumentMoniker": "RR_Output_Entry\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\Program.cs",
+              "RelativeToolTip": "RR_Output_Entry\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T06:15:57.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RR_Output_Entry",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.csproj",
+              "RelativeDocumentMoniker": "RR_Output_Entry\\RR_Output_Entry.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.csproj",
+              "RelativeToolTip": "RR_Output_Entry\\RR_Output_Entry.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-14T06:12:22.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RR_Output_Entry.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.cs",
+              "RelativeDocumentMoniker": "RR_Output_Entry\\RR_Output_Entry.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\RR_Output_Entry\\RR_Output_Entry.cs [Design]",
+              "RelativeToolTip": "RR_Output_Entry\\RR_Output_Entry.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T06:12:16.743Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "F_SFC_TrackIn_AssemblyOrder.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "RelativeDocumentMoniker": "F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "RelativeToolTip": "F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAEwBUBAAC6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:56:22.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "F_SFC_TrackIn_AssemblyOrder.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "RelativeDocumentMoniker": "F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs [Design]",
+              "RelativeToolTip": "F_SFC_TrackIn_AssemblyOrder\\F_SFC_TrackIn_AssemblyOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:56:00.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WebAPIHelper.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\AEQS\\Client\\SJeMES_Framework\\WebAPI\\WebAPIHelper.cs",
+              "RelativeDocumentMoniker": "..\\..\\AEQS\\Client\\SJeMES_Framework\\WebAPI\\WebAPIHelper.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\AEQS\\Client\\SJeMES_Framework\\WebAPI\\WebAPIHelper.cs",
+              "RelativeToolTip": "..\\..\\AEQS\\Client\\SJeMES_Framework\\WebAPI\\WebAPIHelper.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAcwFwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:37:32.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\Program.cs",
+              "RelativeDocumentMoniker": "ProcessAllocation\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\Program.cs",
+              "RelativeToolTip": "ProcessAllocation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T07:14:55.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProcessAllocation.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.cs",
+              "RelativeDocumentMoniker": "ProcessAllocation\\ProcessAllocation.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.cs",
+              "RelativeToolTip": "ProcessAllocation\\ProcessAllocation.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAEwBUBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T06:58:48.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\Program.cs",
+              "RelativeDocumentMoniker": "SkillBonusUpload\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\Program.cs",
+              "RelativeToolTip": "SkillBonusUpload\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T09:44:17.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\Program.cs",
+              "RelativeDocumentMoniker": "F_SFC_TrackIn_AssemblyOrder\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\F_SFC_TrackIn_AssemblyOrder\\Program.cs",
+              "RelativeToolTip": "F_SFC_TrackIn_AssemblyOrder\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T08:57:39.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProcessAllocation.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.cs",
+              "RelativeDocumentMoniker": "ProcessAllocation\\ProcessAllocation.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.cs [Design]",
+              "RelativeToolTip": "ProcessAllocation\\ProcessAllocation.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T06:58:46.564Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "InvestmentReturnOrder.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "RelativeDocumentMoniker": "InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "RelativeToolTip": "InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "ViewState": "AgIAALMBAAAAAAAAAAAIwMUBAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:22:28.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CuttingAllocation.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.cs",
+              "RelativeDocumentMoniker": "CuttingAllocation\\CuttingAllocation.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.cs [Design]",
+              "RelativeToolTip": "CuttingAllocation\\CuttingAllocation.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T09:18:56.504Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CuttingAllocation.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.cs",
+              "RelativeDocumentMoniker": "CuttingAllocation\\CuttingAllocation.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.cs",
+              "RelativeToolTip": "CuttingAllocation\\CuttingAllocation.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAGoBAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T09:18:58.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InvestmentReturnOrder.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "RelativeDocumentMoniker": "InvestmentReturnOrder\\InvestmentReturnOrder.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.cs [Design]",
+              "RelativeToolTip": "InvestmentReturnOrder\\InvestmentReturnOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:21:15.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InvestmentReturnOrder",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.csproj",
+              "RelativeDocumentMoniker": "InvestmentReturnOrder\\InvestmentReturnOrder.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\InvestmentReturnOrder.csproj",
+              "RelativeToolTip": "InvestmentReturnOrder\\InvestmentReturnOrder.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-09T09:21:21.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\Program.cs",
+              "RelativeDocumentMoniker": "InvestmentReturnOrder\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\InvestmentReturnOrder\\Program.cs",
+              "RelativeToolTip": "InvestmentReturnOrder\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:21:41.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProcessAllocation",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.csproj",
+              "RelativeDocumentMoniker": "ProcessAllocation\\ProcessAllocation.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ProcessAllocation\\ProcessAllocation.csproj",
+              "RelativeToolTip": "ProcessAllocation\\ProcessAllocation.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-09T06:55:43.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Final_IE.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Final_IE.cs",
+              "RelativeDocumentMoniker": "Final_IE\\Final_IE.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Final_IE.cs",
+              "RelativeToolTip": "Final_IE\\Final_IE.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAmwMYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T06:10:18.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ThirdEfficiency_Kanban",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj",
+              "RelativeDocumentMoniker": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj",
+              "RelativeToolTip": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-05T03:43:13.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CuttingAllocation",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.csproj",
+              "RelativeDocumentMoniker": "CuttingAllocation\\CuttingAllocation.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\CuttingAllocation.csproj",
+              "RelativeToolTip": "CuttingAllocation\\CuttingAllocation.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-02T09:17:49.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "KPI_FINAL_DATA.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "RelativeDocumentMoniker": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs [Design]",
+              "RelativeToolTip": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T04:46:00.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Replacement_Data",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.csproj",
+              "RelativeDocumentMoniker": "Replacement_Data\\Replacement_Data\\Replacement_Data.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.csproj",
+              "RelativeToolTip": "Replacement_Data\\Replacement_Data\\Replacement_Data.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-02T04:44:47.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Replacement_Data.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "RelativeDocumentMoniker": "Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.cs [Design]",
+              "RelativeToolTip": "Replacement_Data\\Replacement_Data\\Replacement_Data.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:27:37.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Repair.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Repair.cs",
+              "RelativeDocumentMoniker": "Repairs_Entry\\Repair.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Repair.cs [Design]",
+              "RelativeToolTip": "Repairs_Entry\\Repair.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:26:57.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Final_IE.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Final_IE.cs",
+              "RelativeDocumentMoniker": "Final_IE\\Final_IE.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Final_IE.cs [Design]",
+              "RelativeToolTip": "Final_IE\\Final_IE.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T10:02:06.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "KaizenUpload.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KaizenExcelUpload\\KaizenUpload.cs",
+              "RelativeDocumentMoniker": "KaizenExcelUpload\\KaizenUpload.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KaizenExcelUpload\\KaizenUpload.cs [Design]",
+              "RelativeToolTip": "KaizenExcelUpload\\KaizenUpload.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:18:31.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Emp_KPI.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\Emp_KPI.cs",
+              "RelativeDocumentMoniker": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\Emp_KPI.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\Emp_KPI.cs",
+              "RelativeToolTip": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\Emp_KPI.cs",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAUwB0BAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:39:37.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "OutsourcingManualServer.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\SJeMES_API\\KZ_RTLAPI\\Controllers\\OutsourcingManualServer.cs",
+              "RelativeDocumentMoniker": "..\\SJeMES_API\\KZ_RTLAPI\\Controllers\\OutsourcingManualServer.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\SJeMES_API\\KZ_RTLAPI\\Controllers\\OutsourcingManualServer.cs",
+              "RelativeToolTip": "..\\SJeMES_API\\KZ_RTLAPI\\Controllers\\OutsourcingManualServer.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:17:36.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\Program.cs",
+              "RelativeDocumentMoniker": "CuttingAllocation\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\CuttingAllocation\\Program.cs",
+              "RelativeToolTip": "CuttingAllocation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T09:18:24.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Haulting.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Haulting.cs",
+              "RelativeDocumentMoniker": "Repairs_Entry\\Haulting.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Haulting.cs [Design]",
+              "RelativeToolTip": "Repairs_Entry\\Haulting.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:26:55.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "PO_Finish_Upload",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\PO_Finish_Upload\\PO_Finish_Upload.csproj",
+              "RelativeDocumentMoniker": "PO_Finish_Upload\\PO_Finish_Upload.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\PO_Finish_Upload\\PO_Finish_Upload.csproj",
+              "RelativeToolTip": "PO_Finish_Upload\\PO_Finish_Upload.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-31T06:25:58.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "KaizenExcelUpload",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KaizenExcelUpload\\KaizenExcelUpload.csproj",
+              "RelativeDocumentMoniker": "KaizenExcelUpload\\KaizenExcelUpload.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KaizenExcelUpload\\KaizenExcelUpload.csproj",
+              "RelativeToolTip": "KaizenExcelUpload\\KaizenExcelUpload.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-31T06:18:36.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Replacement_Data.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "RelativeDocumentMoniker": "Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "RelativeToolTip": "Replacement_Data\\Replacement_Data\\Replacement_Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T09:00:01.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "KPI_FINAL_DATA.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "RelativeDocumentMoniker": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "RelativeToolTip": "KPI_FINAL_SCORE\\KPI_FINAL_SCORE\\KPI_FINAL_DATA.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAUwAsBAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:38:56.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Data_Lock",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Data_Lock\\Data_Lock.csproj",
+              "RelativeDocumentMoniker": "Data_Lock\\Data_Lock.csproj",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Data_Lock\\Data_Lock.csproj",
+              "RelativeToolTip": "Data_Lock\\Data_Lock.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-31T06:15:13.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Program.cs",
+              "RelativeDocumentMoniker": "Repairs_Entry\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Program.cs",
+              "RelativeToolTip": "Repairs_Entry\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:19:58.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Haulting.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Haulting.cs",
+              "RelativeDocumentMoniker": "Repairs_Entry\\Haulting.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Repairs_Entry\\Haulting.cs",
+              "RelativeToolTip": "Repairs_Entry\\Haulting.cs",
+              "ViewState": "AgIAALgBAAAAAAAAAAD4v8UBAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:20:23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Program.cs",
+              "RelativeDocumentMoniker": "Replacement_Data\\Replacement_Data\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Replacement_Data\\Replacement_Data\\Program.cs",
+              "RelativeToolTip": "Replacement_Data\\Replacement_Data\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:29:32.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "WorkingHoursRecord.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "RelativeDocumentMoniker": "WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "RelativeToolTip": "WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:17:03.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "WorkingHoursRecord.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "RelativeDocumentMoniker": "WorkingHoursRecord\\WorkingHoursRecord.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\WorkingHoursRecord\\WorkingHoursRecord.cs [Design]",
+              "RelativeToolTip": "WorkingHoursRecord\\WorkingHoursRecord.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:17:01.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "StitchingInput2.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\StitchingInput2\\StitchingInput2.cs",
+              "RelativeDocumentMoniker": "StitchingInput2\\StitchingInput2.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\StitchingInput2\\StitchingInput2.cs [Design]",
+              "RelativeToolTip": "StitchingInput2\\StitchingInput2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:16:48.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Data_Lock.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Data_Lock\\Data_Lock.cs",
+              "RelativeDocumentMoniker": "Data_Lock\\Data_Lock.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Data_Lock\\Data_Lock.cs [Design]",
+              "RelativeToolTip": "Data_Lock\\Data_Lock.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:15:08.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\Program.cs",
+              "RelativeDocumentMoniker": "ThirdEfficiency_Kanban\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\Program.cs",
+              "RelativeToolTip": "ThirdEfficiency_Kanban\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:13:16.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ThirdEfficiency_Kanban.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "RelativeDocumentMoniker": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs [Design]",
+              "RelativeToolTip": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:11:15.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ThirdEfficiency_Kanban.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "RelativeDocumentMoniker": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "RelativeToolTip": "ThirdEfficiency_Kanban\\ThirdEfficiency_Kanban.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T06:11:18.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Program.cs",
+              "RelativeDocumentMoniker": "Final_IE\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Final_IE\\Program.cs",
+              "RelativeToolTip": "Final_IE\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T10:02:17.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Program.cs",
+              "RelativeDocumentMoniker": "Upload_TPPH\\Program.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Program.cs",
+              "RelativeToolTip": "Upload_TPPH\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T09:44:27.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Upload_TPPH.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Upload_TPPH.cs",
+              "RelativeDocumentMoniker": "Upload_TPPH\\Upload_TPPH.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Upload_TPPH.cs",
+              "RelativeToolTip": "Upload_TPPH\\Upload_TPPH.cs",
+              "ViewState": "AgIAAAICAAAAAAAAAAAawCECAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:16:14.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Upload_TPPH.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Upload_TPPH.cs",
+              "RelativeDocumentMoniker": "Upload_TPPH\\Upload_TPPH.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Upload_TPPH\\Upload_TPPH.cs [Design]",
+              "RelativeToolTip": "Upload_TPPH\\Upload_TPPH.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T07:15:36.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "SkillBonusUpload.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\SkillBonusUpload.cs",
+              "RelativeDocumentMoniker": "SkillBonusUpload\\SkillBonusUpload.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\SkillBonusUpload.cs",
+              "RelativeToolTip": "SkillBonusUpload\\SkillBonusUpload.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAqwJkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:43:22.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "SkillBonusUpload.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\SkillBonusUpload.cs",
+              "RelativeDocumentMoniker": "SkillBonusUpload\\SkillBonusUpload.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\SkillBonusUpload\\SkillBonusUpload.cs [Design]",
+              "RelativeToolTip": "SkillBonusUpload\\SkillBonusUpload.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T07:43:15.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "QualityBonusUpload.cs",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\QualityBonusupload\\QualityBonusUpload.cs",
+              "RelativeDocumentMoniker": "QualityBonusupload\\QualityBonusUpload.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\QualityBonusupload\\QualityBonusUpload.cs",
+              "RelativeToolTip": "QualityBonusupload\\QualityBonusUpload.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAIA8wHoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:58:00.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "QualityBonusUpload.cs [Design]",
+              "DocumentMoniker": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\QualityBonusupload\\QualityBonusUpload.cs",
+              "RelativeDocumentMoniker": "QualityBonusupload\\QualityBonusUpload.cs",
+              "ToolTip": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\QualityBonusupload\\QualityBonusUpload.cs [Design]",
+              "RelativeToolTip": "QualityBonusupload\\QualityBonusUpload.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:57:58.189Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole_Buffing_Entry.pdb
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\AutocompleteMenu.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Newtonsoft.Json.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\SJeMES_Control_Library.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\SJeMES_Framework.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\GDSJ_Framework.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Newtonsoft.Json.xml
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.Form1.resources
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.Properties.Resources.resources
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.csproj.GenerateResource.cache
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CoreCompileInputs.cache
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CopyComplete
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.pdb
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.csprojAssemblyReference.cache
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\MaterialSkin.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole_Buffing_Entry.dll.config
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\bin\Debug\Outsole_Buffing_Entry.dll
+C:\Users\it-software17\source\repos\Outsole Buffing Entry\Outsole Buffing Entry\obj\Debug\Outsole_Buffing_Entry.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.dll.config
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.pdb
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Newtonsoft.Json.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.Form1.resources
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.Properties.Resources.resources
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.GenerateResource.cache
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CoreCompileInputs.cache
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CopyComplete
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.pdb
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Newtonsoft.Json.xml
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\netstandard.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.AppContext.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Collections.Concurrent.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Collections.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Collections.NonGeneric.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Collections.Specialized.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ComponentModel.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ComponentModel.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Console.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Data.Common.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.Contracts.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.Debug.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.Process.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.Tools.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Diagnostics.Tracing.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Drawing.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Dynamic.Runtime.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Globalization.Calendars.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Globalization.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Globalization.Extensions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.Compression.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.FileSystem.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.IsolatedStorage.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.Pipes.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Linq.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Linq.Expressions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Linq.Parallel.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Linq.Queryable.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Http.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.NameResolution.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.NetworkInformation.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Ping.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Requests.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Security.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.Sockets.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.WebSockets.Client.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Net.WebSockets.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ObjectModel.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Reflection.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Reflection.Extensions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Reflection.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Resources.Reader.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Resources.ResourceManager.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Resources.Writer.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Extensions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Handles.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.InteropServices.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Numerics.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Claims.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.Principal.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Security.SecureString.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Text.Encoding.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Text.RegularExpressions.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.Overlapped.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.Tasks.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.Thread.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.ThreadPool.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Threading.Timer.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.ValueTuple.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.ReaderWriter.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.XDocument.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.XmlDocument.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.XmlSerializer.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.XPath.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\TSM\WorkSpace\MES_Source\AEQS\Client\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csprojAssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csprojAssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.Form1.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.csproj.CopyComplete
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\bin\Debug\Newtonsoft.Json.xml
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\bin\Debug\Outsole_Buffing_Entry.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Outsole_Buffing_Entry\obj\Debug\Outsole_Buffing_Entry.dll

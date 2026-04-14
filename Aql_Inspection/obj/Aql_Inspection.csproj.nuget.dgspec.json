@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Aql_Inspection\\Aql_Inspection.csproj": {}
+  },
+  "projects": {
+    "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Aql_Inspection\\Aql_Inspection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Aql_Inspection\\Aql_Inspection.csproj",
+        "projectName": "Aql_Inspection",
+        "projectPath": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Aql_Inspection\\Aql_Inspection.csproj",
+        "packagesPath": "C:\\Users\\it-software05\\.nuget\\packages\\",
+        "outputPath": "D:\\TFS_Source_Code\\MES_WMS\\KZ_MES\\Aql_Inspection\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\it-software05\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net80-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net80-windows": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net80-windows": {
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0, )"
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[23.26.0, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

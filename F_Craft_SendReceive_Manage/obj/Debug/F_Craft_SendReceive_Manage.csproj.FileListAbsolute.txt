@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.Bad_Registration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.Delay_Registration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.F_Craft_SendReceive_Manage.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Craft_SendReceive_Manage\obj\Debug\F_Craft_SendReceive_Manage.csproj.CoreCompileInputs.cache

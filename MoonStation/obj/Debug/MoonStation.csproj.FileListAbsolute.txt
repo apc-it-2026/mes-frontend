@@ -1,0 +1,4 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\MoonStation\obj\Debug\MoonStation.MoonStation.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\MoonStation\obj\Debug\MoonStation.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\MoonStation\obj\Debug\MoonStation.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\MoonStation\obj\Debug\MoonStation.csproj.CoreCompileInputs.cache

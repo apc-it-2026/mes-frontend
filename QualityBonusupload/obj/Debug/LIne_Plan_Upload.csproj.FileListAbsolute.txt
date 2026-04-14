@@ -1,0 +1,13 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.LIne_Plan_Upload.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.csproj.CopyComplete
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.csprojAssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\bin\Debug\LIne_Plan_Upload.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\bin\Debug\LIne_Plan_Upload.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\bin\Debug\LIne_Plan_Upload.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\QualityBonusupload\obj\Debug\LIne_Plan_Upload.pdb

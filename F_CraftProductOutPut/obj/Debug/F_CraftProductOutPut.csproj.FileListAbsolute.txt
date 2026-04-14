@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.F_CraftProductOutPut.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.OutPutSelectCraft.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.SelectPartNo.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_CraftProductOutPut\obj\Debug\F_CraftProductOutPut.csproj.CoreCompileInputs.cache

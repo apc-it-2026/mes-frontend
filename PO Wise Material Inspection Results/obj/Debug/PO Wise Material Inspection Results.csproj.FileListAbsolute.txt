@@ -1,0 +1,45 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\PO Wise Material Inspection Results.exe.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\PO Wise Material Inspection Results.exe
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\PO Wise Material Inspection Results.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\MaterialSkin.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\SJeMES_Control_Library.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\SJeMES_Framework.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.Video.DirectShow.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.Controls.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\itextsharp.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\OMCS.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\ESBasic.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\Aspose.Words.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\Aspose.Pdf.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\Aspose.Slides.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\Aspose.Cells.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\FastReport.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.Video.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\GDSJ_Framework.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\NPOI.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\ThoughtWorks.QRCode.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\NPOI.OOXML.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.Imaging.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\BouncyCastle.Crypto.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\FastReport.Bars.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\MySql.Data.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\NPOI.OpenXml4Net.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\AForge.Math.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\SJeMES_Control_Library.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\SJeMES_Framework.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\SJeMES_Framework.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\GDSJ_Framework.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\bin\Debug\GDSJ_Framework.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.csprojAssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.exe.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO_Wise_Material_Inspection_Results.PO_Wise_Material_Inspection_Results.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO_Wise_Material_Inspection_Results.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.csproj.CopyComplete
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.exe
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO Wise Material Inspection Results.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\PO Wise Material Inspection Results\obj\Debug\PO_Wise_Material_Inspection_Results.CRD_PO_List.resources

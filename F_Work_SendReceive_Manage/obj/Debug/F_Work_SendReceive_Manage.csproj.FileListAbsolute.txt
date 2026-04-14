@@ -1,0 +1,12 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.BadList.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.Bad_Registration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.causes.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.Delay_Registration.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.F_Work_SendReceive_Manage.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.ResponsibleUnit.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_SendReceive_Manage.SampleInfo.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_SendReceive_Manage.SamplePrint.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_Work_SendReceive_Manage\obj\Debug\F_Work_SendReceive_Manage.csproj.CoreCompileInputs.cache

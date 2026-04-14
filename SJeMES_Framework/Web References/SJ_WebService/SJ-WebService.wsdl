@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RunService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunServiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Print">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RunServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RunService" />
+  </wsdl:message>
+  <wsdl:message name="RunServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RunServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintSoapIn">
+    <wsdl:part name="parameters" element="tns:Print" />
+  </wsdl:message>
+  <wsdl:message name="PrintSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunServiceHttpGetIn">
+    <wsdl:part name="XML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintHttpGetIn">
+    <wsdl:part name="XML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServiceHttpPostIn">
+    <wsdl:part name="XML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintHttpPostIn">
+    <wsdl:part name="XML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SJ_WebServiceSoap">
+    <wsdl:operation name="RunService">
+      <wsdl:input message="tns:RunServiceSoapIn" />
+      <wsdl:output message="tns:RunServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input message="tns:PrintSoapIn" />
+      <wsdl:output message="tns:PrintSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SJ_WebServiceHttpGet">
+    <wsdl:operation name="RunService">
+      <wsdl:input message="tns:RunServiceHttpGetIn" />
+      <wsdl:output message="tns:RunServiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input message="tns:PrintHttpGetIn" />
+      <wsdl:output message="tns:PrintHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SJ_WebServiceHttpPost">
+    <wsdl:operation name="RunService">
+      <wsdl:input message="tns:RunServiceHttpPostIn" />
+      <wsdl:output message="tns:RunServiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input message="tns:PrintHttpPostIn" />
+      <wsdl:output message="tns:PrintHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SJ_WebServiceSoap" type="tns:SJ_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RunService">
+      <soap:operation soapAction="http://tempuri.org/RunService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <soap:operation soapAction="http://tempuri.org/Print" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SJ_WebServiceSoap12" type="tns:SJ_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RunService">
+      <soap12:operation soapAction="http://tempuri.org/RunService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <soap12:operation soapAction="http://tempuri.org/Print" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SJ_WebServiceHttpGet" type="tns:SJ_WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RunService">
+      <http:operation location="/RunService" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <http:operation location="/Print" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SJ_WebServiceHttpPost" type="tns:SJ_WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RunService">
+      <http:operation location="/RunService" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <http:operation location="/Print" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SJ_WebService">
+    <wsdl:port name="SJ_WebServiceSoap" binding="tns:SJ_WebServiceSoap">
+      <soap:address location="http://112.74.49.34:8080/SJ-WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SJ_WebServiceSoap12" binding="tns:SJ_WebServiceSoap12">
+      <soap12:address location="http://112.74.49.34:8080/SJ-WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SJ_WebServiceHttpGet" binding="tns:SJ_WebServiceHttpGet">
+      <http:address location="http://112.74.49.34:8080/SJ-WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SJ_WebServiceHttpPost" binding="tns:SJ_WebServiceHttpPost">
+      <http:address location="http://112.74.49.34:8080/SJ-WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

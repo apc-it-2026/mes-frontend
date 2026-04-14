@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_MMS_INOUT_BILLAddOrder\obj\Debug\F_MMS_InOut_BillAddOrder.InOut_BillOrder.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_MMS_INOUT_BILLAddOrder\obj\Debug\F_MMS_InOut_BillAddOrder.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_MMS_INOUT_BILLAddOrder\obj\Debug\F_MMS_InOut_BillAddOrder.InOutBillAddOrder_MMSPrint.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_MMS_INOUT_BILLAddOrder\obj\Debug\F_MMS_InOut_BillAddOrder.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_MMS_INOUT_BILLAddOrder\obj\Debug\F_MMS_InOut_BillAddOrder.csproj.CoreCompileInputs.cache

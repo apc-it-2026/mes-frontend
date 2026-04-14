@@ -1,0 +1,9 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.DragForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.LiveChartForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.Production_KanbanForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.TierMettingMaintain.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Production_Kanban\obj\Debug\Production_Kanban.csprojAssemblyReference.cache

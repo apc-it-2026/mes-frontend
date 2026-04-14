@@ -1,0 +1,6 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.ProductionEfficiencyForm.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionEfficiencyForm\obj\Debug\ProductionEfficiencyForm.csprojAssemblyReference.cache

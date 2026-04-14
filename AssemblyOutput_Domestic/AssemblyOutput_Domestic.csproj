@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{946F5B97-4A31-4C1F-90FD-E7723DB7F37C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AssemblyOutput_Domestic</RootNamespace>
+    <AssemblyName>AssemblyOutput_Domestic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutocompleteMenu">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\AutocompleteMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="CommanClassLib">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\CommanClassLib.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KaizenForm\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SJeMES_Control_Library">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\SJeMES_Control_Library.dll</HintPath>
+    </Reference>
+    <Reference Include="SJeMES_Framework">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\SJeMES_Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TimeSelecter2">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\TimeSelecter2.dll</HintPath>
+    </Reference>
+    <Reference Include="TotalRow">
+      <HintPath>..\F_SFC_TrackIn_AssemblyOrder\bin\Debug\TotalRow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyOutput_Domestic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyOutput_Domestic.Designer.cs">
+      <DependentUpon>AssemblyOutput_Domestic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrackOut_AssemblyOrder_DepSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrackOut_AssemblyOrder_DepSelect.Designer.cs">
+      <DependentUpon>TrackOut_AssemblyOrder_DepSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrackOut_AssemblyOrder_InOutDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrackOut_AssemblyOrder_InOutDetail.designer.cs">
+      <DependentUpon>TrackOut_AssemblyOrder_InOutDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\DataConvertUtil.cs" />
+    <Compile Include="Util\IPUtil.cs" />
+    <EmbeddedResource Include="AssemblyOutput_Domestic.resx">
+      <DependentUpon>AssemblyOutput_Domestic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TrackOut_AssemblyOrder_DepSelect.resx">
+      <DependentUpon>TrackOut_AssemblyOrder_DepSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrackOut_AssemblyOrder_InOutDetail.resx">
+      <DependentUpon>TrackOut_AssemblyOrder_InOutDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smile.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

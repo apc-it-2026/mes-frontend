@@ -1,0 +1,4 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_FormCompleteReport\obj\Debug\F_FormCompleteReport.F_FormCompleteReport.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_FormCompleteReport\obj\Debug\F_FormCompleteReport.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_FormCompleteReport\obj\Debug\F_FormCompleteReport.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_FormCompleteReport\obj\Debug\F_FormCompleteReport.csproj.CoreCompileInputs.cache

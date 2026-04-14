@@ -1,0 +1,7 @@
+{
+  "language": "en",
+  "org": "APCMESTEST01",
+  "usercode": "500116",
+  "api": "http://localhost:60626/api/CommonCall",
+  "webservice": "http://10.3.0.29:8091/SJ-WebService.asmx"
+}

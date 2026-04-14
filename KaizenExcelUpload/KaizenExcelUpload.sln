@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaizenExcelUpload", "KaizenExcelUpload\KaizenExcelUpload.csproj", "{A91FFE65-3BDC-4875-A128-AB367E523EC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A91FFE65-3BDC-4875-A128-AB367E523EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A91FFE65-3BDC-4875-A128-AB367E523EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A91FFE65-3BDC-4875-A128-AB367E523EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A91FFE65-3BDC-4875-A128-AB367E523EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F54C24C0-C9BC-4304-A531-523F5AA9492C}
+	EndGlobalSection
+EndGlobal

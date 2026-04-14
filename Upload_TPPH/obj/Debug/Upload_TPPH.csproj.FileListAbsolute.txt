@@ -1,0 +1,12 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\bin\Debug\Upload_TPPH.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\bin\Debug\Newtonsoft.Json.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.Upload_TPPH.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.csproj.CoreCompileInputs.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.pdb
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\bin\Debug\Upload_TPPH.dll.config
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\bin\Debug\Upload_TPPH.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.dll
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.csprojAssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\Upload_TPPH\obj\Debug\Upload_TPPH.csproj.CopyComplete

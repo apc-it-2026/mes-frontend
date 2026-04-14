@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_SourcedDailyDemand\obj\Debug\F_SFC_SourcedDailyDemand.csproj.AssemblyReference.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_SourcedDailyDemand\obj\Debug\F_SFC_SourcedDailyDemand.F_SFC_SourcedDailyDemand.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_SourcedDailyDemand\obj\Debug\F_SFC_SourcedDailyDemand.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_SourcedDailyDemand\obj\Debug\F_SFC_SourcedDailyDemand.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_SFC_SourcedDailyDemand\obj\Debug\F_SFC_SourcedDailyDemand.csproj.CoreCompileInputs.cache

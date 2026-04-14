@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionWorkingHours\obj\Debug\ProductionWorkingHours.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionWorkingHours\obj\Debug\ProductionWorkingHours.ProductionWorkingHours_TransHours.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionWorkingHours\obj\Debug\ProductionWorkingHours.ProductionWorkingHours.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionWorkingHours\obj\Debug\ProductionWorkingHours.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\ProductionWorkingHours\obj\Debug\ProductionWorkingHours.csproj.CoreCompileInputs.cache

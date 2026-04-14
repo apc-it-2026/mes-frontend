@@ -1,0 +1,4 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_DelayStatistics_Report\obj\Debug\F_DelayStatistics_Report.F_DelayStatistics_Report.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_DelayStatistics_Report\obj\Debug\F_DelayStatistics_Report.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_DelayStatistics_Report\obj\Debug\F_DelayStatistics_Report.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\F_DelayStatistics_Report\obj\Debug\F_DelayStatistics_Report.csproj.CoreCompileInputs.cache

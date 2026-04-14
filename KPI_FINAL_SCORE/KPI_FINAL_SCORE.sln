@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPI_FINAL_SCORE", "KPI_FINAL_SCORE\KPI_FINAL_SCORE.csproj", "{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4CA82A-5B73-46A8-8EB2-2D15FDF8E712}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31FC7596-6EC4-4A61-9ADD-B29CCCDE7AC4}
+	EndGlobalSection
+EndGlobal

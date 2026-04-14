@@ -1,0 +1,5 @@
+D:\TFS_Source_Code\MES_WMS\KZ_MES\StickBottomInputByOrder\obj\Debug\StickBottomInputByOrder.StickBottomInputByOrder_SelectOrder.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\StickBottomInputByOrder\obj\Debug\StickBottomInputByOrder.StickBottomInputByOrder.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\StickBottomInputByOrder\obj\Debug\StickBottomInputByOrder.Properties.Resources.resources
+D:\TFS_Source_Code\MES_WMS\KZ_MES\StickBottomInputByOrder\obj\Debug\StickBottomInputByOrder.csproj.GenerateResource.cache
+D:\TFS_Source_Code\MES_WMS\KZ_MES\StickBottomInputByOrder\obj\Debug\StickBottomInputByOrder.csproj.CoreCompileInputs.cache
